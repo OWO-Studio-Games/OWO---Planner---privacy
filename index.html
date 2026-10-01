@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en-US">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,14 +63,14 @@
 
   <div class="top">
     <div>
-      <h1 id="pageTitle">Политика конфиденциальности OWO Planner</h1>
-      <div class="updated" id="pageUpdated">Действует с 1 октября 2026 г.</div>
+      <h1 id="pageTitle">OWO Planner Privacy Policy</h1>
+      <div class="updated" id="pageUpdated">Effective October 1, 2026</div>
     </div>
-    <button class="langBtn" id="langToggle" type="button">English (US)</button>
+    <button class="langBtn" id="langToggle" type="button">Русский</button>
   </div>
 
   <!-- ===================== RUSSIAN ===================== -->
-  <div class="lang-block active" id="lang-ru">
+  <div class="lang-block" id="lang-ru">
 
     <div class="card toc">
       <a href="#intro-ru">1. Общие сведения</a>
@@ -218,7 +218,7 @@
   </div>
 
   <!-- ===================== ENGLISH (US) ===================== -->
-  <div class="lang-block" id="lang-en">
+  <div class="lang-block active" id="lang-en">
 
     <div class="card toc">
       <a href="#intro-en">1. Overview</a>
@@ -391,9 +391,9 @@
     var saved = null;
     try{ saved = localStorage.getItem('owoPrivacyLang'); }catch(e){}
     if(!saved){
-      saved = (navigator.language || '').toLowerCase().indexOf('ru') === 0 ? 'ru' : 'ru';
+      saved = 'en';
     }
-    apply(saved === 'en' ? 'en' : 'ru');
+    apply(saved === 'ru' ? 'ru' : 'en');
   })();
 </script>
 
