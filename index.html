@@ -3,71 +3,110 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — OWO Planner</title>
+<title>Privacy Policy – OWO Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
 <style>
   :root{
-    --bg:#FBF6EC; --card:#FFFFFF; --text:#2A1F16; --muted:#7A6A57;
-    --accent:#B8935F; --line:#E9DFCB;
+    --sage:#D6E5CC; --sage2:#EAF1DF; --cream:#FBF4E6; --peach:#F9DCC3; --card:#FFF9EC;
+    --green:#4A5D45; --text:#34402F; --muted:#6F7B67; --orange:#E59A5B; --orange-d:#D4823F;
+    --berry:#D9505A; --line:#EADFC8; --shadow:0 10px 30px rgba(120,100,60,.12);
+    --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+    --sans:"Nunito",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#1C1712; --card:#241E17; --text:#F2E9DA; --muted:#B7A88F; --line:#3A3125; }
+    :root{
+      --sage:#2C3628; --sage2:#252E22; --cream:#1E1A14; --peach:#3A2D22; --card:#2A241B;
+      --green:#BFD8AF; --text:#F1E9D8; --muted:#B5A98F; --line:#3C3326; --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
   }
   *{box-sizing:border-box;}
   html,body{max-width:100%; overflow-x:hidden;}
-  body{
-    margin:0; background:var(--bg); color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.6;
-  }
-  .wrap{max-width:760px; margin:0 auto; padding:40px 20px 80px;}
-  .top{display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap;}
-  h1{font-size:28px; margin:0 0 6px; overflow-wrap:break-word;}
-  .updated{color:var(--muted); font-size:14px; margin-bottom:32px;}
-  .langBtn{
-    flex:0 0 auto; background:var(--card); border:1px solid var(--line); color:var(--text);
-    border-radius:999px; padding:9px 16px; font-size:14px; font-weight:600; cursor:pointer;
-  }
-  .langBtn:hover{border-color:var(--accent);}
-  .card{
-    background:var(--card); border:1px solid var(--line); border-radius:16px;
-    padding:24px 28px; margin-bottom:20px; overflow:hidden;
-  }
-  h2{font-size:19px; margin:0 0 12px; overflow-wrap:break-word;}
-  h3{font-size:16px; margin:18px 0 8px;}
-  p{margin:0 0 12px; overflow-wrap:break-word;}
-  ul{margin:0 0 12px; padding-left:20px;}
-  li{margin-bottom:6px; overflow-wrap:break-word;}
+  body{margin:0; background:var(--cream); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.7;}
+  .in{max-width:820px; margin:0 auto; padding:0 24px;}
+  h1,h2,h3{font-family:var(--serif); color:var(--green); font-weight:600; margin:0; overflow-wrap:break-word;}
+  h1{font-size:clamp(30px,6vw,52px); line-height:1.1; letter-spacing:-.01em; margin-bottom:10px;}
+  h2{font-size:clamp(20px,2.8vw,25px); line-height:1.25; margin-bottom:12px;}
+  h3{font-size:18px; margin:18px 0 8px;}
+  p{margin:0 0 14px; overflow-wrap:break-word;}
+  a{color:var(--orange-d); overflow-wrap:break-word;}
+  :focus-visible{outline:3px solid var(--orange); outline-offset:3px; border-radius:10px;}
+
+  /* header */
+  .hero{background:linear-gradient(180deg,var(--sage) 0%,var(--sage2) 100%); padding:22px 0 26px;}
+  .bar{display:flex; justify-content:space-between; align-items:center; gap:12px;}
+  .brand{font-family:var(--serif); font-weight:700; color:var(--green); font-size:20px; text-decoration:none;}
+  .langBtn{flex:0 0 auto; background:var(--card); border:1px solid var(--line); color:var(--text); border-radius:999px; padding:9px 18px; font:600 14px var(--sans); cursor:pointer; box-shadow:var(--shadow);}
+  .langBtn:hover{border-color:var(--orange);}
+  .langWrap{position:relative;}
+  .langBtn{display:inline-flex; align-items:center; gap:8px;}
+  .langBtn .chev{font-size:11px; opacity:.7;}
+  .langMenu{position:absolute; top:calc(100% + 8px); inset-inline-end:0; z-index:20; margin:0; padding:6px; list-style:none; min-width:210px; max-height:min(70vh,430px); overflow:auto; background:var(--card); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow);}
+  .langMenu[hidden]{display:none;}
+  .langMenu li{margin:0;}
+  .langMenu button{display:flex; align-items:center; gap:10px; width:100%; background:none; border:0; color:var(--text); font:600 15px var(--sans); padding:9px 12px; border-radius:12px; cursor:pointer; text-align:start;}
+  .langMenu button:hover,.langMenu button[aria-selected="true"]{background:var(--sage2);}
+  .langMenu button[aria-selected="true"]{color:var(--green);}
+  .ph{padding:34px 0 6px;}
+  .updated{color:var(--muted); font-size:16px;}
+  .wave{display:block; line-height:0; background:var(--sage2);}
+  .wave svg{display:block; width:100%; height:54px;}
+
+  /* content */
+  .band{background:var(--cream); padding:20px 0 64px;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:28px; padding:28px 32px; margin-bottom:20px; box-shadow:var(--shadow); overflow:hidden;}
+  ul{margin:0 0 12px; padding-inline-start:20px;}
+  li{margin-bottom:8px; overflow-wrap:break-word;}
+  li::marker{color:var(--orange);}
   .tableScroll{width:100%; margin:12px 0; max-width:100%;}
   table{width:100%; table-layout:auto; border-collapse:collapse;}
-  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); font-size:14px; line-height:1.5; vertical-align:top; word-break:normal; overflow-wrap:break-word; hyphens:manual;}
-  th{color:var(--muted); font-weight:600; white-space:nowrap;}
-  @media (max-width:640px){
-    .card{padding:18px 16px;}
-    .wrap{padding:28px 14px 60px;}
-    table, tbody, tr, th, td{display:block; width:100%;}
-    tr.hd{display:none;}
-    tr{border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin-bottom:12px;}
-    td{border:0; padding:6px 0;}
-    td::before{content:attr(data-label); display:block; font-size:12px; font-weight:600; color:var(--muted); margin-bottom:2px;}
-  }
-  a{color:var(--accent); overflow-wrap:break-word;}
-  .mail{font-weight:600;}
-  .toc{font-size:14px;}
-  .toc a{display:block; padding:3px 0;}
+  th,td{text-align:start; padding:12px 14px; border-bottom:1px solid var(--line); font-size:14px; line-height:1.55; vertical-align:top; word-break:normal; overflow-wrap:break-word; hyphens:manual;}
+  th{color:var(--green); font-weight:700; white-space:nowrap; background:var(--sage2);}
+  th:first-child{border-start-start-radius:14px;} th:last-child{border-start-end-radius:14px;}
+  .mail{font-weight:700;}
+  .toc{font-size:15px;}
+  .toc a{display:block; padding:4px 0; font-weight:600; text-decoration:none;}
+  .toc a:hover{text-decoration:underline;}
   .lang-block{display:none;}
   .lang-block.active{display:block;}
+  html[lang="ar"]{--serif:"Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif; --sans:"Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif;}
+  html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3{font-weight:700;}
+  html[lang="zh"] body,html[lang="ja"] body{line-height:1.8;}
+  html[lang="zh"]{--serif:"Noto Serif SC","Songti SC",SimSun,Georgia,serif;}
+  html[lang="ja"]{--serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",Georgia,serif;}
+  .foot{background:var(--sage); color:var(--muted); font-size:14px; text-align:center; padding:30px 0 36px;}
+
+  @media (max-width:640px){
+    .in{padding:0 16px;}
+    .card{padding:22px 18px; border-radius:24px;}
+    .band{padding:12px 0 48px;}
+    .ph{padding-top:26px;}
+    table, tbody, tr, th, td{display:block; width:100%;}
+    tr.hd{display:none;}
+    tr{border:1px solid var(--line); border-radius:16px; padding:10px 14px; margin-bottom:12px; background:var(--cream);}
+    td{border:0; padding:6px 0;}
+    td::before{content:attr(data-label); display:block; font-size:12px; font-weight:700; color:var(--orange-d); margin-bottom:2px;}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-
-  <div class="top">
-    <div>
+<header class="hero">
+  <div class="in">
+    <div class="bar">
+      <a class="brand" href="https://owo-studio-games.github.io/">OWO Studio</a>
+      <div class="langWrap"><button class="langBtn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language"><span id="langCur">🇺🇸 English (US)</span><span class="chev" aria-hidden="true">▾</span></button><ul class="langMenu" id="langMenu" role="listbox" hidden></ul></div>
+    </div>
+    <div class="ph">
       <h1 id="pageTitle">OWO Planner Privacy Policy</h1>
       <div class="updated" id="pageUpdated">Effective October 8, 2026</div>
     </div>
-    <button class="langBtn" id="langToggle" type="button">Русский</button>
   </div>
+</header>
+<div class="wave"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="var(--cream)" d="M0 30 C 200 70 420 0 700 30 S 1200 64 1440 18 V60 H0Z"/></svg></div>
+
+<main class="band">
+<div class="in">
 
   <!-- ===================== RUSSIAN ===================== -->
   <div class="lang-block" id="lang-ru">
@@ -89,7 +128,7 @@
 
     <div class="card" id="intro-ru">
       <h2>1. Общие сведения</h2>
-      <p>OWO Planner ("приложение", "мы") — приложение-планировщик задач, привычек, финансов, дневника и напоминаний. Разработчик приложения — <b>OWO Studio</b>. Главная страница приложения: <a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>. Эта страница описывает, какие данные приложение обрабатывает, как их хранит и как пользователь может их удалить.</p>
+      <p>OWO Planner ("приложение", "мы") – приложение-планировщик задач, привычек, финансов, дневника и напоминаний. Разработчик приложения – <b>OWO Studio</b>. Главная страница приложения: <a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>. Эта страница описывает, какие данные приложение обрабатывает, как их хранит и как пользователь может их удалить.</p>
       <p>Используя приложение, вы соглашаетесь с условиями этой политики.</p>
     </div>
 
@@ -110,19 +149,19 @@
 
     <div class="card" id="storage-ru">
       <h2>3. Где хранятся данные</h2>
-      <p>Данные хранятся <b>локально на вашем устройстве</b>. При включении синхронизации их копия сохраняется в <b>вашем Google Drive</b> (в скрытой папке приложения — drive.appdata), доступной только этому приложению и только в вашем аккаунте.</p>
-      <p>У нас нет собственного сервера, на который поступали бы ваши данные. Мы физически не видим и не храним содержимое ваших задач, финансов, дневника или фотографий — оно остаётся на вашем устройстве и в вашем личном облаке.</p>
+      <p>Данные хранятся <b>локально на вашем устройстве</b>. При включении синхронизации их копия сохраняется в <b>вашем Google Drive</b> (в скрытой папке приложения – drive.appdata), доступной только этому приложению и только в вашем аккаунте.</p>
+      <p>У нас нет собственного сервера, на который поступали бы ваши данные. Мы физически не видим и не храним содержимое ваших задач, финансов, дневника или фотографий – оно остаётся на вашем устройстве и в вашем личном облаке.</p>
     </div>
 
     <div class="card" id="sharing-ru">
       <h2>4. Передача данных третьим лицам</h2>
       <p>Мы не продаём ваши данные и не передаём их третьим сторонам в рекламных или аналитических целях. В приложении не используются рекламные или аналитические SDK, отслеживающие пользователей.</p>
-      <p>При использовании входа через Google (Google Sign-In) и синхронизации данные передаются сервисам Google — в объёме запрошенных разрешений (email и drive.appdata) и в соответствии с <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, включая требования Limited Use. Подробнее о том, какие именно данные и зачем передаются Google, — в разделе 5 ниже.</p>
+      <p>При использовании входа через Google (Google Sign-In) и синхронизации данные передаются сервисам Google – в объёме запрошенных разрешений (email и drive.appdata) и в соответствии с <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, включая требования Limited Use. Подробнее о том, какие именно данные и зачем передаются Google, – в разделе 5 ниже.</p>
     </div>
 
     <div class="card" id="google-ru">
       <h2>5. Использование сервисов Google</h2>
-      <p>OWO Planner обращается к сервисам Google только по вашему действию — когда вы нажимаете «Войти через Google». Ниже подробно описано, какие данные Google (Google user data) приложение получает, зачем, как их использует, хранит и защищает.</p>
+      <p>OWO Planner обращается к сервисам Google только по вашему действию – когда вы нажимаете «Войти через Google». Ниже подробно описано, какие данные Google (Google user data) приложение получает, зачем, как их использует, хранит и защищает.</p>
 
       <h3>Какие данные Google мы получаем и зачем</h3>
       <div class="tableScroll">
@@ -136,7 +175,7 @@
 
       <h3>Как мы используем данные Google</h3>
       <ul>
-        <li>Данные Google используются только для входа в аккаунт и синхронизации ваших данных между устройствами — то есть для функций, которые вы видите в приложении.</li>
+        <li>Данные Google используются только для входа в аккаунт и синхронизации ваших данных между устройствами – то есть для функций, которые вы видите в приложении.</li>
         <li>Мы не продаём эти данные и не передаём их третьим лицам, кроме случаев, когда этого требует закон.</li>
         <li>Мы не используем эти данные для рекламы, в том числе персонализированной и основанной на интересах.</li>
         <li>Мы не используем эти данные для разработки, улучшения или обучения моделей искусственного интеллекта и машинного обучения.</li>
@@ -154,7 +193,7 @@
       <h3>Хранение и удаление данных Google</h3>
       <ul>
         <li>Файл резервной копии хранится в вашем Google Drive, пока вы его не удалите.</li>
-        <li>Чтобы удалить его, откройте в приложении «Настройки → Аккаунт → Удалить аккаунт». Данные будут удалены с устройства и из папки приложения в Google Drive. Подробнее — в разделе 9.</li>
+        <li>Чтобы удалить его, откройте в приложении «Настройки → Аккаунт → Удалить аккаунт». Данные будут удалены с устройства и из папки приложения в Google Drive. Подробнее – в разделе 9.</li>
         <li>Вы можете в любой момент отозвать доступ приложения к своему Google-аккаунту на <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">странице разрешений Google</a>.</li>
       </ul>
 
@@ -187,7 +226,7 @@
       <ul>
         <li>Вся передача данных между приложением и серверами Google происходит по защищённому HTTPS-соединению.</li>
         <li>Отдельные чувствительные значения хранятся в защищённом хранилище устройства (Android Keystore).</li>
-        <li>Резервное копирование данных приложения средствами Android отключено — единственная синхронизация происходит через ваш собственный Google Drive.</li>
+        <li>Резервное копирование данных приложения средствами Android отключено – единственная синхронизация происходит через ваш собственный Google Drive.</li>
       </ul>
     </div>
 
@@ -204,7 +243,7 @@
     <div class="card" id="deletion-ru">
       <h2>9. Удаление данных</h2>
       <p><b>Через приложение (быстрый способ):</b> откройте «Настройки → Аккаунт → Удалить аккаунт». Это немедленно и безвозвратно удаляет все данные приложения с устройства и из папки приложения в вашем Google Drive.</p>
-      <p><b>Без установки приложения:</b> напишите на <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> с темой «Удаление данных» и укажите email вашего Google-аккаунта, использованного в приложении. Учитывая, что ваши данные хранятся не на наших серверах, а на вашем устройстве и (при включённой синхронизации) в вашем Google Drive, для полного удаления обычно достаточно отозвать доступ приложения к аккаунту через <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">страницу разрешений Google-аккаунта</a>, удалить папку приложения в Google Drive и удалить приложение с устройства — мы поможем и подскажем, если потребуется.</p>
+      <p><b>Без установки приложения:</b> напишите на <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> с темой «Удаление данных» и укажите email вашего Google-аккаунта, использованного в приложении. Учитывая, что ваши данные хранятся не на наших серверах, а на вашем устройстве и (при включённой синхронизации) в вашем Google Drive, для полного удаления обычно достаточно отозвать доступ приложения к аккаунту через <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">страницу разрешений Google-аккаунта</a>, удалить папку приложения в Google Drive и удалить приложение с устройства – мы поможем и подскажем, если потребуется.</p>
       <p>Мы отвечаем на такие запросы в течение 30 дней.</p>
     </div>
 
@@ -227,7 +266,7 @@
   </div>
 
   <!-- ===================== ENGLISH (US) ===================== -->
-  <div class="lang-block active" id="lang-en">
+  <div class="lang-block active" id="lang-en-US">
 
     <div class="card toc">
       <a href="#intro-en">1. Overview</a>
@@ -267,19 +306,19 @@
 
     <div class="card" id="storage-en">
       <h2>3. Where data is stored</h2>
-      <p>Data is stored <b>locally on your device</b>. When sync is enabled, a copy is saved to <b>your Google Drive</b> (in the app's hidden data folder — drive.appdata), accessible only to this app and only within your account.</p>
-      <p>We do not operate our own server that receives your data. We cannot see or store the contents of your tasks, finances, journal, or photos — it stays on your device and in your personal cloud storage.</p>
+      <p>Data is stored <b>locally on your device</b>. When sync is enabled, a copy is saved to <b>your Google Drive</b> (in the app's hidden data folder – drive.appdata), accessible only to this app and only within your account.</p>
+      <p>We do not operate our own server that receives your data. We cannot see or store the contents of your tasks, finances, journal, or photos – it stays on your device and in your personal cloud storage.</p>
     </div>
 
     <div class="card" id="sharing-en">
       <h2>4. Sharing data with third parties</h2>
       <p>We do not sell your data and do not share it with third parties for advertising or analytics purposes. The app does not use advertising or analytics SDKs that track users.</p>
-      <p>When you use Google Sign-In and sync, data is transmitted to Google's services — limited to the permissions you granted (email and drive.appdata) — in accordance with the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including its Limited Use requirements. See section 5 below for details on what is transmitted to Google and why.</p>
+      <p>When you use Google Sign-In and sync, data is transmitted to Google's services – limited to the permissions you granted (email and drive.appdata) – in accordance with the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including its Limited Use requirements. See section 5 below for details on what is transmitted to Google and why.</p>
     </div>
 
     <div class="card" id="google-en">
       <h2>5. Use of Google services</h2>
-      <p>OWO Planner accesses Google services only when you take action — by tapping "Sign in with Google". This section describes in detail which Google user data the app receives, why, and how it is used, stored and protected.</p>
+      <p>OWO Planner accesses Google services only when you take action – by tapping "Sign in with Google". This section describes in detail which Google user data the app receives, why, and how it is used, stored and protected.</p>
 
       <h3>What Google data we access and why</h3>
       <div class="tableScroll">
@@ -293,7 +332,7 @@
 
       <h3>How we use Google data</h3>
       <ul>
-        <li>Google data is used only to sign you in and to sync your data between your devices — that is, only for features you can see in the app.</li>
+        <li>Google data is used only to sign you in and to sync your data between your devices – that is, only for features you can see in the app.</li>
         <li>We do not sell this data and do not share it with third parties, except where required by law.</li>
         <li>We do not use this data for advertising, including personalized or interest-based advertising.</li>
         <li>We do not use this data to develop, improve or train artificial intelligence or machine learning models.</li>
@@ -344,7 +383,7 @@
       <ul>
         <li>All data transferred between the app and Google's servers uses a secure HTTPS connection.</li>
         <li>Select sensitive values are stored in the device's secure storage (Android Keystore).</li>
-        <li>Android's system-level app backup is disabled — the only sync happens through your own Google Drive.</li>
+        <li>Android's system-level app backup is disabled – the only sync happens through your own Google Drive.</li>
       </ul>
     </div>
 
@@ -361,7 +400,7 @@
     <div class="card" id="deletion-en">
       <h2>9. Deleting your data</h2>
       <p><b>In the app (fastest way):</b> open "Settings → Account → Delete account". This immediately and permanently deletes all app data from your device and from the app's folder in your Google Drive.</p>
-      <p><b>Without installing the app:</b> email <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> with the subject "Data deletion" and include the Google account email you used in the app. Since your data is stored not on our servers but on your device and (if sync is enabled) in your Google Drive, full deletion usually just requires revoking the app's access from your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions page</a>, deleting the app's data folder in Google Drive, and uninstalling the app from your device — we're happy to help and walk you through it if needed.</p>
+      <p><b>Without installing the app:</b> email <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> with the subject "Data deletion" and include the Google account email you used in the app. Since your data is stored not on our servers but on your device and (if sync is enabled) in your Google Drive, full deletion usually just requires revoking the app's access from your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions page</a>, deleting the app's data folder in Google Drive, and uninstalling the app from your device – we're happy to help and walk you through it if needed.</p>
       <p>We respond to such requests within 30 days.</p>
     </div>
 
@@ -383,35 +422,1935 @@
 
   </div>
 
+  <div class="lang-block" id="lang-gb">
+
+    <div class="card toc">
+      <a href="#intro-gb">1. Overview</a>
+      <a href="#data-gb">2. What data we process</a>
+      <a href="#storage-gb">3. Where data is stored</a>
+      <a href="#sharing-gb">4. Sharing data with third parties</a>
+      <a href="#google-gb">5. Use of Google services</a>
+      <a href="#permissions-gb">6. App permissions</a>
+      <a href="#security-gb">7. Security</a>
+      <a href="#retention-gb">8. Data retention</a>
+      <a href="#deletion-gb">9. Deleting your data</a>
+      <a href="#children-gb">10. Children</a>
+      <a href="#changes-gb">11. Changes to this policy</a>
+      <a href="#contact-gb">12. Contact</a>
+    </div>
+
+    <div class="card" id="intro-gb">
+      <h2>1. Overview</h2>
+      <p>OWO Planner ("the app", "we") is a task, habit, finance, journal, and reminder planner. The app is developed by <b>OWO Studio</b>. App homepage: <a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>. This page describes what data the app processes, how it is stored, and how you can delete it.</p>
+      <p>By using the app, you agree to the terms of this policy.</p>
+    </div>
+
+    <div class="card" id="data-gb">
+      <h2>2. What data we process</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Data type</th><th>Source</th><th>Purpose</th></tr>
+          <tr><td data-label="Data type">Email address</td><td data-label="Source">Google sign-in</td><td data-label="Purpose">Account authentication and cross-device sync</td></tr>
+          <tr><td data-label="Data type">Tasks, habits, notes, calendar events</td><td data-label="Source">Entered by you in the app</td><td data-label="Purpose">Core app functionality</td></tr>
+          <tr><td data-label="Data type">Income/expense entries ("Finance" tab)</td><td data-label="Source">Entered by you in the app</td><td data-label="Purpose">Personal finance tracking within the app</td></tr>
+          <tr><td data-label="Data type">Journal entries (sleep, energy, mood, thoughts)</td><td data-label="Source">Entered by you in the app</td><td data-label="Purpose">Personal self-tracking journal</td></tr>
+          <tr><td data-label="Data type">Photos</td><td data-label="Source">Device camera or gallery (only when you use this feature)</td><td data-label="Purpose">Attached to tasks/entries; stored locally alongside app data, and may be transmitted to your Google Drive storage (appDataFolder) if sync is enabled</td></tr>
+        </table>
+      </div>
+      <p>We do not request or collect location, contacts, SMS, audio recordings, or browsing history.</p>
+    </div>
+
+    <div class="card" id="storage-gb">
+      <h2>3. Where data is stored</h2>
+      <p>Data is stored <b>locally on your device</b>. When sync is enabled, a copy is saved to <b>your Google Drive</b> (in the app's hidden data folder – drive.appdata), accessible only to this app and only within your account.</p>
+      <p>We do not operate our own server that receives your data. We cannot see or store the contents of your tasks, finances, journal, or photos – it stays on your device and in your personal cloud storage.</p>
+    </div>
+
+    <div class="card" id="sharing-gb">
+      <h2>4. Sharing data with third parties</h2>
+      <p>We do not sell your data and do not share it with third parties for advertising or analytics purposes. The app does not use advertising or analytics SDKs that track users.</p>
+      <p>When you use Google Sign-In and sync, data is transmitted to Google's services – limited to the permissions you granted (email and drive.appdata) – in accordance with the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including its Limited Use requirements. See section 5 below for details on what is transmitted to Google and why.</p>
+    </div>
+
+    <div class="card" id="google-gb">
+      <h2>5. Use of Google services</h2>
+      <p>OWO Planner accesses Google services only when you take action – by tapping "Sign in with Google". This section describes in detail which Google user data the app receives, why, and how it is used, stored and protected.</p>
+
+      <h3>What Google data we access and why</h3>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Data</th><th>Permission (scope)</th><th>Why it is needed</th></tr>
+          <tr><td data-label="Data">Email address</td><td data-label="Permission (scope)">email</td><td data-label="Why it is needed">To identify your account when you sign in. The address is not sent to the developer and stays on your device.</td></tr>
+          <tr><td data-label="Data">Basic profile information</td><td data-label="Permission (scope)">profile</td><td data-label="Why it is needed">A standard Google Sign-In permission. The app uses only your email address; your name and photo are not read, used or stored.</td></tr>
+          <tr><td data-label="Data">The app's hidden data folder in your Google Drive (appDataFolder)</td><td data-label="Permission (scope)">https://www.googleapis.com/auth/drive.appdata</td><td data-label="Why it is needed">To store and restore a single backup file (owo-planner-data.json) with your planner data: tasks, habits, finances, journal, photos. This is used to sync between your devices. The app cannot see or change any other files in your Google Drive.</td></tr>
+        </table>
+      </div>
+
+      <h3>How we use Google data</h3>
+      <ul>
+        <li>Google data is used only to sign you in and to sync your data between your devices – that is, only for features you can see in the app.</li>
+        <li>We do not sell this data and do not share it with third parties, except where required by law.</li>
+        <li>We do not use this data for advertising, including personalised or interest-based advertising.</li>
+        <li>We do not use this data to develop, improve or train artificial intelligence or machine learning models.</li>
+        <li>We have no server of our own, so neither the developer nor any other person has access to the contents of your data.</li>
+        <li>The app does not use Google APIs to generate or process images and does not read any other files in your Google Drive.</li>
+      </ul>
+
+      <h3>How Google data is stored and protected</h3>
+      <ul>
+        <li>The backup file is kept in the app's hidden folder in your personal Google Drive, which is accessible only to this app and only in your account.</li>
+        <li>The Google access token is kept only in the app's temporary memory and is not written to disk.</li>
+        <li>All data transferred between the app and Google's servers is sent over a secure HTTPS connection.</li>
+      </ul>
+
+      <h3>Retention and deletion of Google data</h3>
+      <ul>
+        <li>The backup file stays in your Google Drive until you delete it.</li>
+        <li>To delete it, open "Settings → Account → Delete account" in the app. Your data is removed from the device and from the app's folder in Google Drive. See section 9 for details.</li>
+        <li>You can revoke the app's access to your Google Account at any time on the <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google permissions page</a>.</li>
+      </ul>
+
+      <p>OWO Planner's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+    </div>
+
+    <div class="card" id="permissions-gb">
+      <h2>6. On-device app permissions</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Permission</th><th>Purpose</th></tr>
+          <tr><td data-label="Permission">Camera</td><td data-label="Purpose">Taking photos to attach to tasks/entries (requested only when you use this feature)</td></tr>
+          <tr><td data-label="Permission">Notifications</td><td data-label="Purpose">Showing reminders for tasks, habits, and events</td></tr>
+          <tr><td data-label="Permission">Exact alarms</td><td data-label="Purpose">Delivering reminders at the exact scheduled time (optional; the app keeps working without it)</td></tr>
+        </table>
+      </div>
+
+      <h3>Reminders and exact alarms</h3>
+      <ul>
+        <li>The app uses the notifications permission and access to exact alarms to show reminders about tasks, habits, and calendar events at the time you set yourself.</li>
+        <li>Reminders are created and scheduled locally on your device using Android system tools. The developer's server is not involved, and no data is sent to third parties for this purpose.</li>
+        <li>Exact alarms are used only for reminders you create in the app. We do not use them for advertising, analytics, user tracking, or any other purpose.</li>
+        <li>Both permissions are optional. Without access to exact alarms, reminders may fire less precisely; all other app features work as usual.</li>
+        <li>You can turn these permissions on or off at any time in the Android system settings for the app.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="security-gb">
+      <h2>7. Security</h2>
+      <ul>
+        <li>All data transferred between the app and Google's servers uses a secure HTTPS connection.</li>
+        <li>Select sensitive values are stored in the device's secure storage (Android Keystore).</li>
+        <li>Android's system-level app backup is disabled – the only sync happens through your own Google Drive.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="retention-gb">
+      <h2>8. Data retention</h2>
+      <ul>
+        <li>Local data is stored on your device until you delete it yourself (within the app, or by uninstalling the app).</li>
+        <li>Synced data is stored in the app's hidden data folder (appDataFolder) in your Google Drive until you delete it manually or delete your account in the app.</li>
+        <li>After a deletion request, data is removed following the process described in section 9 below.</li>
+        <li>We do not retain data longer than necessary for the operation of the app and the purposes described above.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="deletion-gb">
+      <h2>9. Deleting your data</h2>
+      <p><b>In the app (fastest way):</b> open "Settings → Account → Delete account". This immediately and permanently deletes all app data from your device and from the app's folder in your Google Drive.</p>
+      <p><b>Without installing the app:</b> email <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> with the subject "Data deletion" and include the Google account email you used in the app. Since your data is stored not on our servers but on your device and (if sync is enabled) in your Google Drive, full deletion usually just requires revoking the app's access from your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions page</a>, deleting the app's data folder in Google Drive, and uninstalling the app from your device – we're happy to help and walk you through it if needed.</p>
+      <p>We respond to such requests within 30 days.</p>
+    </div>
+
+    <div class="card" id="children-gb">
+      <h2>10. Children</h2>
+      <p>The app is not directed at children under 13 and does not knowingly collect data from this audience.</p>
+    </div>
+
+    <div class="card" id="changes-gb">
+      <h2>11. Changes to this policy</h2>
+      <p>We may update this page from time to time. The date at the top reflects the last change. Material changes will also be noted within the app.</p>
+    </div>
+
+    <div class="card" id="contact-gb">
+      <h2>12. Contact</h2>
+      <p>Developer: <b>OWO Studio</b>.</p>
+      <p>For any questions about privacy and data handling, email <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a>.</p>
+    </div>
+
+  </div>
+
+  <div class="lang-block" id="lang-ar">
+
+    <div class="card toc">
+      <a href="#intro-ar">1. نظرة عامة</a>
+      <a href="#data-ar">2. البيانات التي نعالجها</a>
+      <a href="#storage-ar">3. مكان تخزين البيانات</a>
+      <a href="#sharing-ar">4. مشاركة البيانات مع أطراف ثالثة</a>
+      <a href="#google-ar">5. استخدام خدمات Google</a>
+      <a href="#permissions-ar">6. أذونات التطبيق</a>
+      <a href="#security-ar">7. الأمان</a>
+      <a href="#retention-ar">8. الاحتفاظ بالبيانات</a>
+      <a href="#deletion-ar">9. حذف بياناتك</a>
+      <a href="#children-ar">10. الأطفال</a>
+      <a href="#changes-ar">11. التغييرات على هذه السياسة</a>
+      <a href="#contact-ar">12. التواصل</a>
+    </div>
+
+    <div class="card" id="intro-ar">
+      <h2>1. نظرة عامة</h2>
+      <p>OWO Planner («التطبيق»، «نحن») هو مخطِّط للمهام والعادات والمالية والمذكرات والتذكيرات. يتم تطوير التطبيق بواسطة <b>OWO Studio</b>. الصفحة الرئيسية للتطبيق: <a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>. توضح هذه الصفحة البيانات التي يعالجها التطبيق، وكيفية تخزينها، وكيف يمكنك حذفها.</p>
+      <p>باستخدامك التطبيق، فإنك توافق على شروط هذه السياسة.</p>
+    </div>
+
+    <div class="card" id="data-ar">
+      <h2>2. البيانات التي نعالجها</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>نوع البيانات</th><th>المصدر</th><th>الغرض</th></tr>
+          <tr><td data-label="نوع البيانات">عنوان البريد الإلكتروني</td><td data-label="المصدر">تسجيل الدخول عبر Google</td><td data-label="الغرض">مصادقة الحساب والمزامنة بين الأجهزة</td></tr>
+          <tr><td data-label="نوع البيانات">المهام والعادات والملاحظات وأحداث التقويم</td><td data-label="المصدر">يدخلها المستخدم في التطبيق</td><td data-label="الغرض">الوظائف الأساسية للتطبيق</td></tr>
+          <tr><td data-label="نوع البيانات">سجلات الدخل/المصروفات (تبويب «المالية»)</td><td data-label="المصدر">يدخلها المستخدم في التطبيق</td><td data-label="الغرض">تتبع المالية الشخصية داخل التطبيق</td></tr>
+          <tr><td data-label="نوع البيانات">مدخلات المذكرات (النوم، الطاقة، المزاج، الأفكار)</td><td data-label="المصدر">يدخلها المستخدم في التطبيق</td><td data-label="الغرض">مذكرات شخصية للملاحظة الذاتية</td></tr>
+          <tr><td data-label="نوع البيانات">الصور</td><td data-label="المصدر">كاميرا الجهاز أو المعرض (فقط عند استخدامك لهذه الميزة)</td><td data-label="الغرض">تُرفق بالمهام/المدخلات؛ تُخزَّن محليًا مع بيانات التطبيق، وقد تُنقل إلى مساحة التخزين في Google Drive الخاص بك (appDataFolder) إذا كانت المزامنة مفعّلة</td></tr>
+        </table>
+      </div>
+      <p>نحن لا نطلب ولا نجمع الموقع الجغرافي أو جهات الاتصال أو الرسائل النصية القصيرة أو التسجيلات الصوتية أو سجل التصفح.</p>
+    </div>
+
+    <div class="card" id="storage-ar">
+      <h2>3. مكان تخزين البيانات</h2>
+      <p>تُخزَّن البيانات <b>محليًا على جهازك</b>. عند تفعيل المزامنة، تُحفظ نسخة في <b>Google Drive الخاص بك</b> (في مجلد البيانات المخفي للتطبيق – drive.appdata)، ولا يمكن الوصول إليه إلا من هذا التطبيق وضمن حسابك فقط.</p>
+      <p>نحن لا نشغّل خادمًا خاصًا بنا يستقبل بياناتك. لا يمكننا الاطلاع على محتوى مهامك أو أمورك المالية أو مذكراتك أو صورك ولا تخزينه – فهو يبقى على جهازك وفي مساحة التخزين السحابية الشخصية الخاصة بك.</p>
+    </div>
+
+    <div class="card" id="sharing-ar">
+      <h2>4. مشاركة البيانات مع أطراف ثالثة</h2>
+      <p>نحن لا نبيع بياناتك ولا نشاركها مع أطراف ثالثة لأغراض الإعلان أو التحليلات. لا يستخدم التطبيق حزم SDK للإعلانات أو التحليلات التي تتعقب المستخدمين.</p>
+      <p>عند استخدام تسجيل الدخول عبر Google والمزامنة، تُنقل البيانات إلى خدمات Google – بما يقتصر على الأذونات التي منحتها (email وdrive.appdata) – وفقًا لـ<a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">سياسة بيانات المستخدم لخدمات Google API</a> (Google API Services User Data Policy)، بما في ذلك متطلبات الاستخدام المحدود (Limited Use). راجع القسم 5 أدناه لمعرفة تفاصيل ما يُنقل إلى Google وسبب ذلك.</p>
+    </div>
+
+    <div class="card" id="google-ar">
+      <h2>5. استخدام خدمات Google</h2>
+      <p>يصل OWO Planner إلى خدمات Google فقط عندما تقوم أنت بإجراء – بالنقر على «تسجيل الدخول عبر Google». يصف هذا القسم بالتفصيل بيانات مستخدم Google التي يتلقاها التطبيق، وسبب ذلك، وكيفية استخدامها وتخزينها وحمايتها.</p>
+
+      <h3>بيانات Google التي نصل إليها وسبب ذلك</h3>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>البيانات</th><th>الإذن (scope)</th><th>سبب الحاجة إليها</th></tr>
+          <tr><td data-label="البيانات">عنوان البريد الإلكتروني</td><td data-label="الإذن (scope)">email</td><td data-label="سبب الحاجة إليها">لتحديد هوية حسابك عند تسجيل الدخول. لا يُرسل العنوان إلى المطوّر ويبقى على جهازك.</td></tr>
+          <tr><td data-label="البيانات">معلومات الملف الشخصي الأساسية</td><td data-label="الإذن (scope)">profile</td><td data-label="سبب الحاجة إليها">إذن قياسي في تسجيل الدخول عبر Google. يستخدم التطبيق عنوان بريدك الإلكتروني فقط؛ ولا يتم قراءة اسمك وصورتك أو استخدامهما أو تخزينهما.</td></tr>
+          <tr><td data-label="البيانات">مجلد البيانات المخفي للتطبيق في Google Drive الخاص بك (appDataFolder)</td><td data-label="الإذن (scope)">https://www.googleapis.com/auth/drive.appdata</td><td data-label="سبب الحاجة إليها">لتخزين واستعادة ملف نسخة احتياطية واحد (owo-planner-data.json) يحتوي على بيانات مخطِّطك: المهام والعادات والمالية والمذكرات والصور. يُستخدم للمزامنة بين أجهزتك. لا يمكن للتطبيق رؤية أو تغيير أي ملفات أخرى في Google Drive الخاص بك.</td></tr>
+        </table>
+      </div>
+
+      <h3>كيف نستخدم بيانات Google</h3>
+      <ul>
+        <li>تُستخدم بيانات Google فقط لتسجيل دخولك ولمزامنة بياناتك بين أجهزتك – أي فقط للميزات التي تراها في التطبيق.</li>
+        <li>نحن لا نبيع هذه البيانات ولا نشاركها مع أطراف ثالثة، إلا عندما يقتضي القانون ذلك.</li>
+        <li>نحن لا نستخدم هذه البيانات للإعلان، بما في ذلك الإعلانات المخصصة أو القائمة على الاهتمامات.</li>
+        <li>نحن لا نستخدم هذه البيانات لتطوير نماذج الذكاء الاصطناعي أو التعلم الآلي أو تحسينها أو تدريبها.</li>
+        <li>ليس لدينا خادم خاص بنا، لذا لا يستطيع المطوّر ولا أي شخص آخر الوصول إلى محتوى بياناتك.</li>
+        <li>لا يستخدم التطبيق واجهات Google البرمجية لإنشاء الصور أو معالجتها، ولا يقرأ أي ملفات أخرى في Google Drive الخاص بك.</li>
+      </ul>
+
+      <h3>كيف تُخزَّن بيانات Google وتُحمى</h3>
+      <ul>
+        <li>يُحفظ ملف النسخة الاحتياطية في المجلد المخفي للتطبيق ضمن Google Drive الشخصي الخاص بك، ولا يمكن الوصول إليه إلا من هذا التطبيق وفي حسابك فقط.</li>
+        <li>يُحفظ رمز الوصول من Google في الذاكرة المؤقتة للتطبيق فقط ولا يُكتب على القرص.</li>
+        <li>تُرسل جميع البيانات المنقولة بين التطبيق وخوادم Google عبر اتصال HTTPS آمن.</li>
+      </ul>
+
+      <h3>الاحتفاظ ببيانات Google وحذفها</h3>
+      <ul>
+        <li>يبقى ملف النسخة الاحتياطية في Google Drive الخاص بك حتى تحذفه.</li>
+        <li>لحذفه، افتح «الإعدادات ← الحساب ← حذف الحساب» في التطبيق. تُزال بياناتك من الجهاز ومن مجلد التطبيق في Google Drive. راجع القسم 9 للتفاصيل.</li>
+        <li>يمكنك إلغاء وصول التطبيق إلى حساب Google الخاص بك في أي وقت من <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">صفحة أذونات Google</a>.</li>
+      </ul>
+
+      <p>يلتزم استخدام OWO Planner للمعلومات المستلمة من واجهات Google البرمجية ونقلها بـ<a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">سياسة بيانات المستخدم لخدمات Google API</a> (Google API Services User Data Policy)، بما في ذلك متطلبات الاستخدام المحدود (Limited Use).</p>
+    </div>
+
+    <div class="card" id="permissions-ar">
+      <h2>6. أذونات التطبيق على الجهاز</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>الإذن</th><th>الغرض</th></tr>
+          <tr><td data-label="الإذن">الكاميرا</td><td data-label="الغرض">التقاط صور لإرفاقها بالمهام/المدخلات (تُطلب فقط عند استخدامك لهذه الميزة)</td></tr>
+          <tr><td data-label="الإذن">الإشعارات</td><td data-label="الغرض">عرض تذكيرات المهام والعادات والأحداث</td></tr>
+          <tr><td data-label="الإذن">المنبهات الدقيقة</td><td data-label="الغرض">تسليم التذكيرات في الوقت المحدد بدقة (اختياري؛ يواصل التطبيق العمل بدونه)</td></tr>
+        </table>
+      </div>
+
+      <h3>التذكيرات والمنبهات الدقيقة</h3>
+      <ul>
+        <li>يستخدم التطبيق إذن الإشعارات والوصول إلى المنبهات الدقيقة لعرض تذكيرات المهام والعادات وأحداث التقويم في الوقت الذي تحدده بنفسك.</li>
+        <li>تُنشأ التذكيرات وتُجدول محليًا على جهازك باستخدام أدوات نظام Android. لا يشارك خادم المطوّر في ذلك، ولا تُرسل أي بيانات إلى أطراف ثالثة لهذا الغرض.</li>
+        <li>تُستخدم المنبهات الدقيقة فقط للتذكيرات التي تنشئها في التطبيق. نحن لا نستخدمها للإعلان أو التحليلات أو تتبع المستخدمين أو أي غرض آخر.</li>
+        <li>كلا الإذنين اختياري. وبدون الوصول إلى المنبهات الدقيقة، قد تعمل التذكيرات بدقة أقل؛ وتعمل جميع ميزات التطبيق الأخرى كالمعتاد.</li>
+        <li>يمكنك تشغيل هذه الأذونات أو إيقافها في أي وقت من إعدادات نظام Android الخاصة بالتطبيق.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="security-ar">
+      <h2>7. الأمان</h2>
+      <ul>
+        <li>تستخدم جميع البيانات المنقولة بين التطبيق وخوادم Google اتصال HTTPS آمنًا.</li>
+        <li>تُخزَّن بعض القيم الحساسة في وحدة التخزين الآمنة بالجهاز (Android Keystore).</li>
+        <li>النسخ الاحتياطي للتطبيقات على مستوى نظام Android معطَّل – والمزامنة الوحيدة تتم عبر Google Drive الخاص بك.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="retention-ar">
+      <h2>8. الاحتفاظ بالبيانات</h2>
+      <ul>
+        <li>تُخزَّن البيانات المحلية على جهازك حتى تحذفها بنفسك (داخل التطبيق أو بإلغاء تثبيت التطبيق).</li>
+        <li>تُخزَّن البيانات المزامَنة في مجلد بيانات التطبيق المخفي (appDataFolder) في Google Drive الخاص بك حتى تحذفها يدويًا أو تحذف حسابك في التطبيق.</li>
+        <li>بعد طلب الحذف، تُزال البيانات وفق الإجراء الموضح في القسم 9 أدناه.</li>
+        <li>نحن لا نحتفظ بالبيانات لمدة أطول من اللازم لتشغيل التطبيق وللأغراض الموضحة أعلاه.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="deletion-ar">
+      <h2>9. حذف بياناتك</h2>
+      <p><b>داخل التطبيق (أسرع طريقة):</b> افتح «الإعدادات ← الحساب ← حذف الحساب». يؤدي ذلك إلى حذف جميع بيانات التطبيق فورًا ونهائيًا من جهازك ومن مجلد التطبيق في Google Drive الخاص بك.</p>
+      <p><b>دون تثبيت التطبيق:</b> أرسل رسالة إلى <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> بعنوان «حذف البيانات» وأرفق عنوان بريد حساب Google الذي استخدمته في التطبيق. وبما أن بياناتك لا تُخزَّن على خوادمنا بل على جهازك و(إذا كانت المزامنة مفعّلة) في Google Drive الخاص بك، فإن الحذف الكامل يتطلب عادةً فقط إلغاء وصول التطبيق من <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">صفحة أذونات حساب Google</a> وحذف مجلد بيانات التطبيق في Google Drive وإلغاء تثبيت التطبيق من جهازك – ويسعدنا مساعدتك وإرشادك خطوة بخطوة عند الحاجة.</p>
+      <p>نرد على هذه الطلبات خلال 30 يومًا.</p>
+    </div>
+
+    <div class="card" id="children-ar">
+      <h2>10. الأطفال</h2>
+      <p>التطبيق غير موجّه للأطفال دون سن 13 عامًا ولا يجمع بيانات من هذه الفئة عن علم.</p>
+    </div>
+
+    <div class="card" id="changes-ar">
+      <h2>11. التغييرات على هذه السياسة</h2>
+      <p>قد نحدّث هذه الصفحة من وقت لآخر. يعكس التاريخ في الأعلى آخر تغيير. وسيتم أيضًا الإشعار بالتغييرات الجوهرية داخل التطبيق.</p>
+    </div>
+
+    <div class="card" id="contact-ar">
+      <h2>12. التواصل</h2>
+      <p>المطوّر: <b>OWO Studio</b>.</p>
+      <p>لأي أسئلة حول الخصوصية ومعالجة البيانات، راسلنا على <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a>.</p>
+    </div>
+
+  </div>
+
+  <div class="lang-block" id="lang-zh">
+
+    <div class="card toc">
+      <a href="#intro-zh">1. 概述</a>
+      <a href="#data-zh">2. 我们处理哪些数据</a>
+      <a href="#storage-zh">3. 数据存储在哪里</a>
+      <a href="#sharing-zh">4. 与第三方共享数据</a>
+      <a href="#google-zh">5. Google 服务的使用</a>
+      <a href="#permissions-zh">6. 应用权限</a>
+      <a href="#security-zh">7. 安全</a>
+      <a href="#retention-zh">8. 数据保留</a>
+      <a href="#deletion-zh">9. 删除您的数据</a>
+      <a href="#children-zh">10. 儿童</a>
+      <a href="#changes-zh">11. 本政策的变更</a>
+      <a href="#contact-zh">12. 联系方式</a>
+    </div>
+
+    <div class="card" id="intro-zh">
+      <h2>1. 概述</h2>
+      <p>OWO Planner（“本应用”“我们”）是一款用于管理任务、习惯、财务、日记和提醒的规划应用。本应用由 <b>OWO Studio</b> 开发。应用主页：<a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>。本页面说明本应用处理哪些数据、如何存储这些数据，以及您如何删除它们。</p>
+      <p>使用本应用即表示您同意本政策的条款。</p>
+    </div>
+
+    <div class="card" id="data-zh">
+      <h2>2. 我们处理哪些数据</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>数据类型</th><th>来源</th><th>用途</th></tr>
+          <tr><td data-label="数据类型">电子邮件地址</td><td data-label="来源">通过 Google 登录</td><td data-label="用途">账户验证和跨设备同步</td></tr>
+          <tr><td data-label="数据类型">任务、习惯、笔记、日历事件</td><td data-label="来源">由您在应用中输入</td><td data-label="用途">应用的核心功能</td></tr>
+          <tr><td data-label="数据类型">收入/支出记录（“财务”标签页）</td><td data-label="来源">由您在应用中输入</td><td data-label="用途">在应用内记录个人财务</td></tr>
+          <tr><td data-label="数据类型">日记记录（睡眠、精力、心情、想法）</td><td data-label="来源">由您在应用中输入</td><td data-label="用途">个人自我观察日记</td></tr>
+          <tr><td data-label="数据类型">照片</td><td data-label="来源">设备相机或相册（仅在您使用此功能时）</td><td data-label="用途">附加到任务/记录；与应用数据一同存储在本地，若启用同步，可能会传输到您的 Google 云端硬盘存储空间（appDataFolder）</td></tr>
+        </table>
+      </div>
+      <p>我们不会请求或收集位置信息、联系人、短信、录音或浏览记录。</p>
+    </div>
+
+    <div class="card" id="storage-zh">
+      <h2>3. 数据存储在哪里</h2>
+      <p>数据<b>存储在您设备的本地</b>。启用同步后，副本会保存到<b>您的 Google 云端硬盘</b>（应用的隐藏数据文件夹 – drive.appdata），仅限本应用且仅在您的账户内访问。</p>
+      <p>我们不运营接收您数据的自有服务器。我们无法查看或存储您的任务、财务、日记或照片的内容––它们保留在您的设备和您个人的云存储中。</p>
+    </div>
+
+    <div class="card" id="sharing-zh">
+      <h2>4. 与第三方共享数据</h2>
+      <p>我们不会出售您的数据，也不会为广告或分析目的与第三方共享。本应用不使用会跟踪用户的广告或分析 SDK。</p>
+      <p>当您使用 Google 登录和同步时，数据会传输到 Google 的服务––仅限于您授予的权限（email 和 drive.appdata）––并遵守<a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API 服务用户数据政策</a>（Google API Services User Data Policy），包括其有限使用（Limited Use）要求。有关向 Google 传输哪些内容及原因的详情，请参阅下文第 5 节。</p>
+    </div>
+
+    <div class="card" id="google-zh">
+      <h2>5. Google 服务的使用</h2>
+      <p>仅当您执行操作（点击“使用 Google 登录”）时，OWO Planner 才会访问 Google 服务。本节详细说明本应用接收哪些 Google 用户数据、原因，以及这些数据如何被使用、存储和保护。</p>
+
+      <h3>我们访问哪些 Google 数据及原因</h3>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>数据</th><th>权限（scope）</th><th>所需原因</th></tr>
+          <tr><td data-label="数据">电子邮件地址</td><td data-label="权限（scope）">email</td><td data-label="所需原因">用于在您登录时识别您的账户。该地址不会发送给开发者，并保留在您的设备上。</td></tr>
+          <tr><td data-label="数据">基本个人资料信息</td><td data-label="权限（scope）">profile</td><td data-label="所需原因">Google 登录的标准权限。本应用仅使用您的电子邮件地址；不会读取、使用或存储您的姓名和照片。</td></tr>
+          <tr><td data-label="数据">您 Google 云端硬盘中应用的隐藏数据文件夹（appDataFolder）</td><td data-label="权限（scope）">https://www.googleapis.com/auth/drive.appdata</td><td data-label="所需原因">用于存储和恢复一个包含您规划数据（任务、习惯、财务、日记、照片）的备份文件（owo-planner-data.json）。用于在您的设备之间同步。本应用无法查看或更改您 Google 云端硬盘中的任何其他文件。</td></tr>
+        </table>
+      </div>
+
+      <h3>我们如何使用 Google 数据</h3>
+      <ul>
+        <li>Google 数据仅用于让您登录并在您的设备之间同步数据––也就是仅用于您在应用中看到的功能。</li>
+        <li>除法律要求的情况外，我们不会出售这些数据，也不会与第三方共享。</li>
+        <li>我们不会将这些数据用于广告，包括个性化或基于兴趣的广告。</li>
+        <li>我们不会使用这些数据来开发、改进或训练人工智能或机器学习模型。</li>
+        <li>我们没有自己的服务器，因此开发者和任何其他人都无法访问您的数据内容。</li>
+        <li>本应用不使用 Google API 来生成或处理图像，也不会读取您 Google 云端硬盘中的任何其他文件。</li>
+      </ul>
+
+      <h3>Google 数据如何存储和保护</h3>
+      <ul>
+        <li>备份文件保存在您个人 Google 云端硬盘中应用的隐藏文件夹内，仅限本应用且仅在您的账户中访问。</li>
+        <li>Google 访问令牌仅保存在应用的临时内存中，不会写入磁盘。</li>
+        <li>应用与 Google 服务器之间传输的所有数据均通过安全的 HTTPS 连接发送。</li>
+      </ul>
+
+      <h3>Google 数据的保留和删除</h3>
+      <ul>
+        <li>备份文件会一直保留在您的 Google 云端硬盘中，直到您将其删除。</li>
+        <li>要删除它，请在应用中打开“设置 → 账户 → 删除账户”。您的数据将从设备和 Google 云端硬盘中的应用文件夹中删除。详情请参阅第 9 节。</li>
+        <li>您可以随时在 <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google 权限页面</a>撤销应用对您 Google 账户的访问权限。</li>
+      </ul>
+
+      <p>OWO Planner 对从 Google API 获取的信息的使用和传输，遵守<a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API 服务用户数据政策</a>（Google API Services User Data Policy），包括有限使用（Limited Use）要求。</p>
+    </div>
+
+    <div class="card" id="permissions-zh">
+      <h2>6. 设备上的应用权限</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>权限</th><th>用途</th></tr>
+          <tr><td data-label="权限">相机</td><td data-label="用途">拍摄照片以附加到任务/记录（仅在您使用此功能时请求）</td></tr>
+          <tr><td data-label="权限">通知</td><td data-label="用途">显示任务、习惯和事件的提醒</td></tr>
+          <tr><td data-label="权限">精确闹钟</td><td data-label="用途">在设定的精确时间发送提醒（可选；没有此权限应用仍可正常运行）</td></tr>
+        </table>
+      </div>
+
+      <h3>提醒和精确闹钟</h3>
+      <ul>
+        <li>本应用使用通知权限和精确闹钟访问权限，在您自己设定的时间显示有关任务、习惯和日历事件的提醒。</li>
+        <li>提醒通过 Android 系统工具在您的设备本地创建和安排。开发者的服务器不参与其中，也不会为此向第三方发送任何数据。</li>
+        <li>精确闹钟仅用于您在应用中创建的提醒。我们不会将其用于广告、分析、用户跟踪或任何其他目的。</li>
+        <li>这两项权限均为可选。没有精确闹钟权限时，提醒的触发可能不够精确；应用的所有其他功能照常工作。</li>
+        <li>您可以随时在该应用的 Android 系统设置中开启或关闭这些权限。</li>
+      </ul>
+    </div>
+
+    <div class="card" id="security-zh">
+      <h2>7. 安全</h2>
+      <ul>
+        <li>应用与 Google 服务器之间传输的所有数据均使用安全的 HTTPS 连接。</li>
+        <li>部分敏感值存储在设备的安全存储（Android Keystore）中。</li>
+        <li>Android 系统级应用备份已禁用––唯一的同步通过您自己的 Google 云端硬盘进行。</li>
+      </ul>
+    </div>
+
+    <div class="card" id="retention-zh">
+      <h2>8. 数据保留</h2>
+      <ul>
+        <li>本地数据存储在您的设备上，直到您自行删除（在应用内删除，或卸载应用）。</li>
+        <li>同步的数据存储在您 Google 云端硬盘中应用的隐藏数据文件夹（appDataFolder）内，直到您手动删除或在应用中删除账户。</li>
+        <li>收到删除请求后，数据将按照下文第 9 节所述的流程删除。</li>
+        <li>我们保留数据的时间不会超过应用运行及上述目的所需的时间。</li>
+      </ul>
+    </div>
+
+    <div class="card" id="deletion-zh">
+      <h2>9. 删除您的数据</h2>
+      <p><b>在应用中（最快的方式）：</b>打开“设置 → 账户 → 删除账户”。这将立即且永久地从您的设备和 Google 云端硬盘中的应用文件夹中删除所有应用数据。</p>
+      <p><b>无需安装应用：</b>请发送邮件至 <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a>，主题为“数据删除”，并附上您在应用中使用的 Google 账户邮箱。由于您的数据并非存储在我们的服务器上，而是在您的设备以及（若启用同步）您的 Google 云端硬盘中，完全删除通常只需在您的 <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google 账户权限页面</a>撤销应用的访问权限、删除 Google 云端硬盘中的应用数据文件夹，并从设备上卸载应用––如有需要，我们乐意协助并逐步指导您。</p>
+      <p>我们会在 30 天内回复此类请求。</p>
+    </div>
+
+    <div class="card" id="children-zh">
+      <h2>10. 儿童</h2>
+      <p>本应用不面向 13 岁以下的儿童，也不会有意收集该群体的数据。</p>
+    </div>
+
+    <div class="card" id="changes-zh">
+      <h2>11. 本政策的变更</h2>
+      <p>我们可能会不时更新本页面。顶部的日期反映最近一次更改。重大变更也会在应用内说明。</p>
+    </div>
+
+    <div class="card" id="contact-zh">
+      <h2>12. 联系方式</h2>
+      <p>开发者：<b>OWO Studio</b>。</p>
+      <p>如对隐私和数据处理有任何疑问，请发送邮件至 <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a>。</p>
+    </div>
+
+  </div>
+
+  <div class="lang-block" id="lang-fr">
+
+    <div class="card toc">
+      <a href="#intro-fr">1. Présentation générale</a>
+      <a href="#data-fr">2. Données que nous traitons</a>
+      <a href="#storage-fr">3. Où les données sont stockées</a>
+      <a href="#sharing-fr">4. Partage des données avec des tiers</a>
+      <a href="#google-fr">5. Utilisation des services Google</a>
+      <a href="#permissions-fr">6. Autorisations de l'application</a>
+      <a href="#security-fr">7. Sécurité</a>
+      <a href="#retention-fr">8. Conservation des données</a>
+      <a href="#deletion-fr">9. Suppression de vos données</a>
+      <a href="#children-fr">10. Enfants</a>
+      <a href="#changes-fr">11. Modifications de cette politique</a>
+      <a href="#contact-fr">12. Contact</a>
+    </div>
+
+    <div class="card" id="intro-fr">
+      <h2>1. Présentation générale</h2>
+      <p>OWO Planner (« l'application », « nous ») est un planificateur de tâches, d'habitudes, de finances, de journal et de rappels. L'application est développée par <b>OWO Studio</b>. Page d'accueil de l'application : <a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>. Cette page décrit les données traitées par l'application, la manière dont elles sont stockées et comment vous pouvez les supprimer.</p>
+      <p>En utilisant l'application, vous acceptez les conditions de la présente politique.</p>
+    </div>
+
+    <div class="card" id="data-fr">
+      <h2>2. Données que nous traitons</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Type de données</th><th>Source</th><th>Finalité</th></tr>
+          <tr><td data-label="Type de données">Adresse e-mail</td><td data-label="Source">Connexion avec Google</td><td data-label="Finalité">Authentification du compte et synchronisation entre appareils</td></tr>
+          <tr><td data-label="Type de données">Tâches, habitudes, notes, événements du calendrier</td><td data-label="Source">Saisies par vous dans l'application</td><td data-label="Finalité">Fonctionnalités principales de l'application</td></tr>
+          <tr><td data-label="Type de données">Entrées de revenus/dépenses (onglet « Finances »)</td><td data-label="Source">Saisies par vous dans l'application</td><td data-label="Finalité">Suivi des finances personnelles dans l'application</td></tr>
+          <tr><td data-label="Type de données">Entrées du journal (sommeil, énergie, humeur, pensées)</td><td data-label="Source">Saisies par vous dans l'application</td><td data-label="Finalité">Journal personnel d'auto-observation</td></tr>
+          <tr><td data-label="Type de données">Photos</td><td data-label="Source">Appareil photo ou galerie de l'appareil (uniquement lorsque vous utilisez cette fonctionnalité)</td><td data-label="Finalité">Jointes aux tâches/entrées ; stockées localement avec les données de l'application et, si la synchronisation est activée, pouvant être transmises à votre espace Google Drive (appDataFolder)</td></tr>
+        </table>
+      </div>
+      <p>Nous ne demandons ni ne collectons la localisation, les contacts, les SMS, les enregistrements audio ni l'historique de navigation.</p>
+    </div>
+
+    <div class="card" id="storage-fr">
+      <h2>3. Où les données sont stockées</h2>
+      <p>Les données sont stockées <b>localement sur votre appareil</b>. Lorsque la synchronisation est activée, une copie est enregistrée dans <b>votre Google Drive</b> (dans le dossier de données masqué de l'application – drive.appdata), accessible uniquement à cette application et uniquement depuis votre compte.</p>
+      <p>Nous n'exploitons aucun serveur propre qui reçoit vos données. Nous ne pouvons ni voir ni stocker le contenu de vos tâches, finances, journal ou photos – il reste sur votre appareil et dans votre espace de stockage cloud personnel.</p>
+    </div>
+
+    <div class="card" id="sharing-fr">
+      <h2>4. Partage des données avec des tiers</h2>
+      <p>Nous ne vendons pas vos données et ne les partageons pas avec des tiers à des fins publicitaires ou analytiques. L'application n'utilise aucun SDK publicitaire ou d'analyse qui suit les utilisateurs.</p>
+      <p>Lorsque vous utilisez Google Sign-In et la synchronisation, des données sont transmises aux services de Google – limitées aux autorisations que vous avez accordées (email et drive.appdata) – conformément à la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, y compris ses exigences d'utilisation limitée (Limited Use). Voir la section 5 ci-dessous pour le détail de ce qui est transmis à Google et pourquoi.</p>
+    </div>
+
+    <div class="card" id="google-fr">
+      <h2>5. Utilisation des services Google</h2>
+      <p>OWO Planner n'accède aux services Google que lorsque vous agissez – en appuyant sur « Se connecter avec Google ». Cette section décrit en détail quelles données utilisateur Google l'application reçoit, pourquoi, et comment elles sont utilisées, stockées et protégées.</p>
+
+      <h3>Les données Google auxquelles nous accédons et pourquoi</h3>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Données</th><th>Autorisation (scope)</th><th>Pourquoi elle est nécessaire</th></tr>
+          <tr><td data-label="Données">Adresse e-mail</td><td data-label="Autorisation (scope)">email</td><td data-label="Pourquoi elle est nécessaire">Pour identifier votre compte lors de la connexion. L'adresse n'est pas envoyée au développeur et reste sur votre appareil.</td></tr>
+          <tr><td data-label="Données">Informations de base du profil</td><td data-label="Autorisation (scope)">profile</td><td data-label="Pourquoi elle est nécessaire">Une autorisation standard de Google Sign-In. L'application n'utilise que votre adresse e-mail ; votre nom et votre photo ne sont ni lus, ni utilisés, ni stockés.</td></tr>
+          <tr><td data-label="Données">Le dossier de données masqué de l'application dans votre Google Drive (appDataFolder)</td><td data-label="Autorisation (scope)">https://www.googleapis.com/auth/drive.appdata</td><td data-label="Pourquoi elle est nécessaire">Pour enregistrer et restaurer un unique fichier de sauvegarde (owo-planner-data.json) contenant les données de votre planificateur : tâches, habitudes, finances, journal, photos. Il sert à synchroniser vos appareils. L'application ne peut voir ni modifier aucun autre fichier de votre Google Drive.</td></tr>
+        </table>
+      </div>
+
+      <h3>Comment nous utilisons les données Google</h3>
+      <ul>
+        <li>Les données Google servent uniquement à vous connecter et à synchroniser vos données entre vos appareils – c'est-à-dire uniquement pour des fonctionnalités visibles dans l'application.</li>
+        <li>Nous ne vendons pas ces données et ne les partageons pas avec des tiers, sauf si la loi l'exige.</li>
+        <li>Nous n'utilisons pas ces données à des fins publicitaires, y compris la publicité personnalisée ou fondée sur les centres d'intérêt.</li>
+        <li>Nous n'utilisons pas ces données pour développer, améliorer ou entraîner des modèles d'intelligence artificielle ou d'apprentissage automatique.</li>
+        <li>Nous n'avons pas de serveur propre ; ni le développeur ni aucune autre personne n'a donc accès au contenu de vos données.</li>
+        <li>L'application n'utilise pas les API Google pour générer ou traiter des images et ne lit aucun autre fichier de votre Google Drive.</li>
+      </ul>
+
+      <h3>Comment les données Google sont stockées et protégées</h3>
+      <ul>
+        <li>Le fichier de sauvegarde est conservé dans le dossier masqué de l'application dans votre Google Drive personnel, accessible uniquement à cette application et uniquement depuis votre compte.</li>
+        <li>Le jeton d'accès Google est conservé uniquement dans la mémoire temporaire de l'application et n'est pas écrit sur le disque.</li>
+        <li>Toutes les données échangées entre l'application et les serveurs de Google sont transmises via une connexion HTTPS sécurisée.</li>
+      </ul>
+
+      <h3>Conservation et suppression des données Google</h3>
+      <ul>
+        <li>Le fichier de sauvegarde reste dans votre Google Drive jusqu'à ce que vous le supprimiez.</li>
+        <li>Pour le supprimer, ouvrez « Paramètres → Compte → Supprimer le compte » dans l'application. Vos données sont supprimées de l'appareil et du dossier de l'application dans Google Drive. Voir la section 9 pour plus de détails.</li>
+        <li>Vous pouvez révoquer à tout moment l'accès de l'application à votre compte Google sur la <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">page des autorisations Google</a>.</li>
+      </ul>
+
+      <p>L'utilisation et le transfert par OWO Planner des informations reçues des API Google respectent la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, y compris les exigences d'utilisation limitée (Limited Use).</p>
+    </div>
+
+    <div class="card" id="permissions-fr">
+      <h2>6. Autorisations de l'application sur l'appareil</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Autorisation</th><th>Finalité</th></tr>
+          <tr><td data-label="Autorisation">Appareil photo</td><td data-label="Finalité">Prise de photos à joindre aux tâches/entrées (demandée uniquement lorsque vous utilisez cette fonctionnalité)</td></tr>
+          <tr><td data-label="Autorisation">Notifications</td><td data-label="Finalité">Affichage des rappels pour les tâches, habitudes et événements</td></tr>
+          <tr><td data-label="Autorisation">Alarmes exactes</td><td data-label="Finalité">Envoi des rappels à l'heure exacte programmée (facultatif ; l'application continue de fonctionner sans)</td></tr>
+        </table>
+      </div>
+
+      <h3>Rappels et alarmes exactes</h3>
+      <ul>
+        <li>L'application utilise l'autorisation de notifications et l'accès aux alarmes exactes pour afficher des rappels concernant les tâches, habitudes et événements du calendrier à l'heure que vous avez vous-même définie.</li>
+        <li>Les rappels sont créés et programmés localement sur votre appareil à l'aide des outils système d'Android. Le serveur du développeur n'intervient pas, et aucune donnée n'est envoyée à des tiers à cette fin.</li>
+        <li>Les alarmes exactes servent uniquement aux rappels que vous créez dans l'application. Nous ne les utilisons ni pour la publicité, ni pour l'analyse, ni pour le suivi des utilisateurs, ni à aucune autre fin.</li>
+        <li>Les deux autorisations sont facultatives. Sans accès aux alarmes exactes, les rappels peuvent se déclencher avec moins de précision ; toutes les autres fonctionnalités de l'application fonctionnent normalement.</li>
+        <li>Vous pouvez activer ou désactiver ces autorisations à tout moment dans les paramètres système Android de l'application.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="security-fr">
+      <h2>7. Sécurité</h2>
+      <ul>
+        <li>Toutes les données échangées entre l'application et les serveurs de Google utilisent une connexion HTTPS sécurisée.</li>
+        <li>Certaines valeurs sensibles sont stockées dans l'espace de stockage sécurisé de l'appareil (Android Keystore).</li>
+        <li>La sauvegarde d'applications au niveau du système Android est désactivée – la seule synchronisation s'effectue via votre propre Google Drive.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="retention-fr">
+      <h2>8. Conservation des données</h2>
+      <ul>
+        <li>Les données locales sont conservées sur votre appareil jusqu'à ce que vous les supprimiez vous-même (dans l'application ou en désinstallant l'application).</li>
+        <li>Les données synchronisées sont conservées dans le dossier de données masqué de l'application (appDataFolder) de votre Google Drive jusqu'à ce que vous les supprimiez manuellement ou supprimiez votre compte dans l'application.</li>
+        <li>Après une demande de suppression, les données sont supprimées selon la procédure décrite à la section 9 ci-dessous.</li>
+        <li>Nous ne conservons pas les données plus longtemps que nécessaire au fonctionnement de l'application et aux finalités décrites ci-dessus.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="deletion-fr">
+      <h2>9. Suppression de vos données</h2>
+      <p><b>Dans l'application (méthode la plus rapide) :</b> ouvrez « Paramètres → Compte → Supprimer le compte ». Cela supprime immédiatement et définitivement toutes les données de l'application de votre appareil et du dossier de l'application dans votre Google Drive.</p>
+      <p><b>Sans installer l'application :</b> écrivez à <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> avec l'objet « Suppression des données » en indiquant l'adresse e-mail du compte Google utilisé dans l'application. Vos données n'étant pas stockées sur nos serveurs mais sur votre appareil et (si la synchronisation est activée) dans votre Google Drive, une suppression complète consiste généralement à révoquer l'accès de l'application sur la <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">page des autorisations de votre compte Google</a>, à supprimer le dossier de données de l'application dans Google Drive et à désinstaller l'application de votre appareil – nous sommes heureux de vous aider et de vous guider si nécessaire.</p>
+      <p>Nous répondons à ces demandes dans un délai de 30 jours.</p>
+    </div>
+
+    <div class="card" id="children-fr">
+      <h2>10. Enfants</h2>
+      <p>L'application ne s'adresse pas aux enfants de moins de 13 ans et ne collecte pas sciemment de données auprès de ce public.</p>
+    </div>
+
+    <div class="card" id="changes-fr">
+      <h2>11. Modifications de cette politique</h2>
+      <p>Nous pouvons mettre à jour cette page de temps à autre. La date en haut indique la dernière modification. Les modifications importantes seront également signalées dans l'application.</p>
+    </div>
+
+    <div class="card" id="contact-fr">
+      <h2>12. Contact</h2>
+      <p>Développeur : <b>OWO Studio</b>.</p>
+      <p>Pour toute question sur la confidentialité et le traitement des données, écrivez à <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a>.</p>
+    </div>
+
+  </div>
+
+  <div class="lang-block" id="lang-de">
+
+    <div class="card toc">
+      <a href="#intro-de">1. Überblick</a>
+      <a href="#data-de">2. Welche Daten wir verarbeiten</a>
+      <a href="#storage-de">3. Wo die Daten gespeichert werden</a>
+      <a href="#sharing-de">4. Weitergabe von Daten an Dritte</a>
+      <a href="#google-de">5. Nutzung von Google-Diensten</a>
+      <a href="#permissions-de">6. App-Berechtigungen</a>
+      <a href="#security-de">7. Sicherheit</a>
+      <a href="#retention-de">8. Aufbewahrung der Daten</a>
+      <a href="#deletion-de">9. Löschung Ihrer Daten</a>
+      <a href="#children-de">10. Kinder</a>
+      <a href="#changes-de">11. Änderungen dieser Richtlinie</a>
+      <a href="#contact-de">12. Kontakt</a>
+    </div>
+
+    <div class="card" id="intro-de">
+      <h2>1. Überblick</h2>
+      <p>OWO Planner („die App“, „wir“) ist ein Planer für Aufgaben, Gewohnheiten, Finanzen, Tagebuch und Erinnerungen. Die App wird von <b>OWO Studio</b> entwickelt. Startseite der App: <a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>. Diese Seite beschreibt, welche Daten die App verarbeitet, wie sie gespeichert werden und wie Sie sie löschen können.</p>
+      <p>Mit der Nutzung der App stimmen Sie den Bedingungen dieser Richtlinie zu.</p>
+    </div>
+
+    <div class="card" id="data-de">
+      <h2>2. Welche Daten wir verarbeiten</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Datenart</th><th>Quelle</th><th>Zweck</th></tr>
+          <tr><td data-label="Datenart">E-Mail-Adresse</td><td data-label="Quelle">Anmeldung über Google</td><td data-label="Zweck">Kontoauthentifizierung und geräteübergreifende Synchronisierung</td></tr>
+          <tr><td data-label="Datenart">Aufgaben, Gewohnheiten, Notizen, Kalendereinträge</td><td data-label="Quelle">Von Ihnen in der App eingegeben</td><td data-label="Zweck">Kernfunktionen der App</td></tr>
+          <tr><td data-label="Datenart">Einnahmen-/Ausgabeneinträge (Tab „Finanzen“)</td><td data-label="Quelle">Von Ihnen in der App eingegeben</td><td data-label="Zweck">Verwaltung der persönlichen Finanzen innerhalb der App</td></tr>
+          <tr><td data-label="Datenart">Tagebucheinträge (Schlaf, Energie, Stimmung, Gedanken)</td><td data-label="Quelle">Von Ihnen in der App eingegeben</td><td data-label="Zweck">Persönliches Tagebuch zur Selbstbeobachtung</td></tr>
+          <tr><td data-label="Datenart">Fotos</td><td data-label="Quelle">Gerätekamera oder Galerie (nur wenn Sie diese Funktion nutzen)</td><td data-label="Zweck">Werden Aufgaben/Einträgen angehängt; lokal zusammen mit den App-Daten gespeichert und bei aktivierter Synchronisierung ggf. an Ihren Google-Drive-Speicher (appDataFolder) übertragen</td></tr>
+        </table>
+      </div>
+      <p>Wir fragen weder Standort, Kontakte, SMS, Audioaufnahmen noch Browserverlauf ab und erheben diese auch nicht.</p>
+    </div>
+
+    <div class="card" id="storage-de">
+      <h2>3. Wo die Daten gespeichert werden</h2>
+      <p>Die Daten werden <b>lokal auf Ihrem Gerät</b> gespeichert. Bei aktivierter Synchronisierung wird eine Kopie in <b>Ihrem Google Drive</b> gespeichert (im versteckten Datenordner der App – drive.appdata), auf den nur diese App und nur innerhalb Ihres Kontos zugreifen kann.</p>
+      <p>Wir betreiben keinen eigenen Server, der Ihre Daten empfängt. Wir können die Inhalte Ihrer Aufgaben, Finanzen, Ihres Tagebuchs oder Ihrer Fotos weder einsehen noch speichern – sie bleiben auf Ihrem Gerät und in Ihrem persönlichen Cloud-Speicher.</p>
+    </div>
+
+    <div class="card" id="sharing-de">
+      <h2>4. Weitergabe von Daten an Dritte</h2>
+      <p>Wir verkaufen Ihre Daten nicht und geben sie nicht zu Werbe- oder Analysezwecken an Dritte weiter. Die App verwendet keine Werbe- oder Analyse-SDKs, die Nutzer verfolgen.</p>
+      <p>Wenn Sie Google Sign-In und die Synchronisierung nutzen, werden Daten an Google-Dienste übertragen – beschränkt auf die von Ihnen erteilten Berechtigungen (email und drive.appdata) – gemäß der <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, einschließlich ihrer Anforderungen zur eingeschränkten Nutzung (Limited Use). Details dazu, was an Google übertragen wird und warum, finden Sie unten in Abschnitt 5.</p>
+    </div>
+
+    <div class="card" id="google-de">
+      <h2>5. Nutzung von Google-Diensten</h2>
+      <p>OWO Planner greift nur dann auf Google-Dienste zu, wenn Sie selbst aktiv werden – durch Tippen auf „Mit Google anmelden“. Dieser Abschnitt beschreibt im Detail, welche Google-Nutzerdaten die App erhält, warum, und wie sie verwendet, gespeichert und geschützt werden.</p>
+
+      <h3>Auf welche Google-Daten wir zugreifen und warum</h3>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Daten</th><th>Berechtigung (Scope)</th><th>Warum sie benötigt wird</th></tr>
+          <tr><td data-label="Daten">E-Mail-Adresse</td><td data-label="Berechtigung (Scope)">email</td><td data-label="Warum sie benötigt wird">Um Ihr Konto bei der Anmeldung zu identifizieren. Die Adresse wird nicht an den Entwickler gesendet und bleibt auf Ihrem Gerät.</td></tr>
+          <tr><td data-label="Daten">Grundlegende Profilinformationen</td><td data-label="Berechtigung (Scope)">profile</td><td data-label="Warum sie benötigt wird">Eine Standardberechtigung von Google Sign-In. Die App verwendet nur Ihre E-Mail-Adresse; Ihr Name und Ihr Foto werden nicht gelesen, verwendet oder gespeichert.</td></tr>
+          <tr><td data-label="Daten">Der versteckte Datenordner der App in Ihrem Google Drive (appDataFolder)</td><td data-label="Berechtigung (Scope)">https://www.googleapis.com/auth/drive.appdata</td><td data-label="Warum sie benötigt wird">Zum Speichern und Wiederherstellen einer einzelnen Sicherungsdatei (owo-planner-data.json) mit Ihren Planerdaten: Aufgaben, Gewohnheiten, Finanzen, Tagebuch, Fotos. Sie dient der Synchronisierung zwischen Ihren Geräten. Die App kann keine anderen Dateien in Ihrem Google Drive sehen oder ändern.</td></tr>
+        </table>
+      </div>
+
+      <h3>Wie wir Google-Daten verwenden</h3>
+      <ul>
+        <li>Google-Daten werden ausschließlich verwendet, um Sie anzumelden und Ihre Daten zwischen Ihren Geräten zu synchronisieren – also nur für Funktionen, die Sie in der App sehen.</li>
+        <li>Wir verkaufen diese Daten nicht und geben sie nicht an Dritte weiter, außer wenn dies gesetzlich vorgeschrieben ist.</li>
+        <li>Wir verwenden diese Daten nicht für Werbung, auch nicht für personalisierte oder interessenbasierte Werbung.</li>
+        <li>Wir verwenden diese Daten nicht, um Modelle der künstlichen Intelligenz oder des maschinellen Lernens zu entwickeln, zu verbessern oder zu trainieren.</li>
+        <li>Wir haben keinen eigenen Server, daher haben weder der Entwickler noch andere Personen Zugriff auf die Inhalte Ihrer Daten.</li>
+        <li>Die App verwendet keine Google-APIs zum Erzeugen oder Verarbeiten von Bildern und liest keine anderen Dateien in Ihrem Google Drive.</li>
+      </ul>
+
+      <h3>Wie Google-Daten gespeichert und geschützt werden</h3>
+      <ul>
+        <li>Die Sicherungsdatei wird im versteckten Ordner der App in Ihrem persönlichen Google Drive aufbewahrt, auf den nur diese App und nur in Ihrem Konto zugreifen kann.</li>
+        <li>Das Google-Zugriffstoken wird nur im temporären Speicher der App gehalten und nicht auf die Festplatte geschrieben.</li>
+        <li>Alle Daten, die zwischen der App und den Google-Servern übertragen werden, werden über eine sichere HTTPS-Verbindung gesendet.</li>
+      </ul>
+
+      <h3>Aufbewahrung und Löschung von Google-Daten</h3>
+      <ul>
+        <li>Die Sicherungsdatei verbleibt in Ihrem Google Drive, bis Sie sie löschen.</li>
+        <li>Zum Löschen öffnen Sie in der App „Einstellungen → Konto → Konto löschen“. Ihre Daten werden vom Gerät und aus dem App-Ordner in Google Drive entfernt. Details finden Sie in Abschnitt 9.</li>
+        <li>Sie können den Zugriff der App auf Ihr Google-Konto jederzeit auf der <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google-Seite für Berechtigungen</a> widerrufen.</li>
+      </ul>
+
+      <p>Die Nutzung und Übertragung von Informationen, die OWO Planner von Google-APIs erhält, entspricht der <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, einschließlich der Anforderungen zur eingeschränkten Nutzung (Limited Use).</p>
+    </div>
+
+    <div class="card" id="permissions-de">
+      <h2>6. App-Berechtigungen auf dem Gerät</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Berechtigung</th><th>Zweck</th></tr>
+          <tr><td data-label="Berechtigung">Kamera</td><td data-label="Zweck">Aufnahme von Fotos, die Aufgaben/Einträgen angehängt werden (wird nur angefragt, wenn Sie diese Funktion nutzen)</td></tr>
+          <tr><td data-label="Berechtigung">Benachrichtigungen</td><td data-label="Zweck">Anzeige von Erinnerungen an Aufgaben, Gewohnheiten und Termine</td></tr>
+          <tr><td data-label="Berechtigung">Exakte Alarme</td><td data-label="Zweck">Zustellung von Erinnerungen zur genau festgelegten Zeit (optional; die App funktioniert auch ohne diese Berechtigung)</td></tr>
+        </table>
+      </div>
+
+      <h3>Erinnerungen und exakte Alarme</h3>
+      <ul>
+        <li>Die App nutzt die Benachrichtigungsberechtigung und den Zugriff auf exakte Alarme, um Erinnerungen an Aufgaben, Gewohnheiten und Kalendereinträge zu der von Ihnen selbst festgelegten Zeit anzuzeigen.</li>
+        <li>Erinnerungen werden lokal auf Ihrem Gerät mithilfe der Android-Systemfunktionen erstellt und geplant. Der Server des Entwicklers ist daran nicht beteiligt, und zu diesem Zweck werden keine Daten an Dritte gesendet.</li>
+        <li>Exakte Alarme werden nur für Erinnerungen verwendet, die Sie in der App erstellen. Wir nutzen sie weder für Werbung, Analysen, Nutzer-Tracking noch für andere Zwecke.</li>
+        <li>Beide Berechtigungen sind optional. Ohne Zugriff auf exakte Alarme werden Erinnerungen möglicherweise weniger genau ausgelöst; alle anderen Funktionen der App arbeiten wie gewohnt.</li>
+        <li>Sie können diese Berechtigungen jederzeit in den Android-Systemeinstellungen der App ein- oder ausschalten.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="security-de">
+      <h2>7. Sicherheit</h2>
+      <ul>
+        <li>Alle Daten, die zwischen der App und den Google-Servern übertragen werden, nutzen eine sichere HTTPS-Verbindung.</li>
+        <li>Ausgewählte sensible Werte werden im sicheren Speicher des Geräts (Android Keystore) abgelegt.</li>
+        <li>Die systemseitige App-Sicherung von Android ist deaktiviert – die einzige Synchronisierung erfolgt über Ihr eigenes Google Drive.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="retention-de">
+      <h2>8. Aufbewahrung der Daten</h2>
+      <ul>
+        <li>Lokale Daten werden auf Ihrem Gerät gespeichert, bis Sie sie selbst löschen (in der App oder durch Deinstallation der App).</li>
+        <li>Synchronisierte Daten werden im versteckten Datenordner der App (appDataFolder) in Ihrem Google Drive gespeichert, bis Sie sie manuell löschen oder Ihr Konto in der App löschen.</li>
+        <li>Nach einer Löschanfrage werden die Daten gemäß dem unten in Abschnitt 9 beschriebenen Verfahren entfernt.</li>
+        <li>Wir bewahren Daten nicht länger auf, als für den Betrieb der App und die oben beschriebenen Zwecke erforderlich ist.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="deletion-de">
+      <h2>9. Löschung Ihrer Daten</h2>
+      <p><b>In der App (schnellster Weg):</b> Öffnen Sie „Einstellungen → Konto → Konto löschen“. Dadurch werden sofort und dauerhaft alle App-Daten von Ihrem Gerät und aus dem App-Ordner in Ihrem Google Drive gelöscht.</p>
+      <p><b>Ohne Installation der App:</b> Senden Sie eine E-Mail an <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> mit dem Betreff „Datenlöschung“ und geben Sie die Google-Konto-E-Mail-Adresse an, die Sie in der App verwendet haben. Da Ihre Daten nicht auf unseren Servern, sondern auf Ihrem Gerät und (bei aktivierter Synchronisierung) in Ihrem Google Drive gespeichert sind, genügt für eine vollständige Löschung in der Regel, den Zugriff der App auf der <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Seite für Google-Konto-Berechtigungen</a> zu widerrufen, den Datenordner der App in Google Drive zu löschen und die App von Ihrem Gerät zu deinstallieren – wir helfen Ihnen gerne dabei und führen Sie bei Bedarf Schritt für Schritt durch den Vorgang.</p>
+      <p>Wir beantworten solche Anfragen innerhalb von 30 Tagen.</p>
+    </div>
+
+    <div class="card" id="children-de">
+      <h2>10. Kinder</h2>
+      <p>Die App richtet sich nicht an Kinder unter 13 Jahren und erhebt wissentlich keine Daten von dieser Zielgruppe.</p>
+    </div>
+
+    <div class="card" id="changes-de">
+      <h2>11. Änderungen dieser Richtlinie</h2>
+      <p>Wir können diese Seite von Zeit zu Zeit aktualisieren. Das Datum oben zeigt die letzte Änderung an. Wesentliche Änderungen werden außerdem in der App bekannt gegeben.</p>
+    </div>
+
+    <div class="card" id="contact-de">
+      <h2>12. Kontakt</h2>
+      <p>Entwickler: <b>OWO Studio</b>.</p>
+      <p>Bei Fragen zum Datenschutz und zum Umgang mit Daten schreiben Sie an <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a>.</p>
+    </div>
+
+  </div>
+
+  <div class="lang-block" id="lang-it">
+
+    <div class="card toc">
+      <a href="#intro-it">1. Panoramica</a>
+      <a href="#data-it">2. Quali dati trattiamo</a>
+      <a href="#storage-it">3. Dove vengono conservati i dati</a>
+      <a href="#sharing-it">4. Condivisione dei dati con terze parti</a>
+      <a href="#google-it">5. Utilizzo dei servizi Google</a>
+      <a href="#permissions-it">6. Autorizzazioni dell'app</a>
+      <a href="#security-it">7. Sicurezza</a>
+      <a href="#retention-it">8. Conservazione dei dati</a>
+      <a href="#deletion-it">9. Eliminazione dei tuoi dati</a>
+      <a href="#children-it">10. Minori</a>
+      <a href="#changes-it">11. Modifiche a questa informativa</a>
+      <a href="#contact-it">12. Contatti</a>
+    </div>
+
+    <div class="card" id="intro-it">
+      <h2>1. Panoramica</h2>
+      <p>OWO Planner («l'app», «noi») è un planner per attività, abitudini, finanze, diario e promemoria. L'app è sviluppata da <b>OWO Studio</b>. Pagina principale dell'app: <a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>. Questa pagina descrive quali dati l'app tratta, come vengono conservati e come puoi eliminarli.</p>
+      <p>Utilizzando l'app, accetti i termini di questa informativa.</p>
+    </div>
+
+    <div class="card" id="data-it">
+      <h2>2. Quali dati trattiamo</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Tipo di dati</th><th>Origine</th><th>Finalità</th></tr>
+          <tr><td data-label="Tipo di dati">Indirizzo e-mail</td><td data-label="Origine">Accesso con Google</td><td data-label="Finalità">Autenticazione dell'account e sincronizzazione tra dispositivi</td></tr>
+          <tr><td data-label="Tipo di dati">Attività, abitudini, note, eventi del calendario</td><td data-label="Origine">Inseriti da te nell'app</td><td data-label="Finalità">Funzionalità principali dell'app</td></tr>
+          <tr><td data-label="Tipo di dati">Voci di entrate/uscite (scheda «Finanze»)</td><td data-label="Origine">Inseriti da te nell'app</td><td data-label="Finalità">Gestione delle finanze personali all'interno dell'app</td></tr>
+          <tr><td data-label="Tipo di dati">Voci del diario (sonno, energia, umore, pensieri)</td><td data-label="Origine">Inseriti da te nell'app</td><td data-label="Finalità">Diario personale di auto-osservazione</td></tr>
+          <tr><td data-label="Tipo di dati">Foto</td><td data-label="Origine">Fotocamera o galleria del dispositivo (solo quando usi questa funzione)</td><td data-label="Finalità">Allegate ad attività/voci; conservate localmente insieme ai dati dell'app e, se la sincronizzazione è attiva, possono essere trasmesse al tuo spazio Google Drive (appDataFolder)</td></tr>
+        </table>
+      </div>
+      <p>Non richiediamo né raccogliamo posizione, contatti, SMS, registrazioni audio o cronologia di navigazione.</p>
+    </div>
+
+    <div class="card" id="storage-it">
+      <h2>3. Dove vengono conservati i dati</h2>
+      <p>I dati sono conservati <b>localmente sul tuo dispositivo</b>. Quando la sincronizzazione è attiva, una copia viene salvata nel <b>tuo Google Drive</b> (nella cartella dati nascosta dell'app – drive.appdata), accessibile solo a questa app e solo all'interno del tuo account.</p>
+      <p>Non gestiamo un server proprio che riceva i tuoi dati. Non possiamo vedere né conservare il contenuto di attività, finanze, diario o foto: resta sul tuo dispositivo e nel tuo spazio cloud personale.</p>
+    </div>
+
+    <div class="card" id="sharing-it">
+      <h2>4. Condivisione dei dati con terze parti</h2>
+      <p>Non vendiamo i tuoi dati e non li condividiamo con terze parti per scopi pubblicitari o di analisi. L'app non utilizza SDK pubblicitari o di analisi che tracciano gli utenti.</p>
+      <p>Quando usi Google Sign-In e la sincronizzazione, i dati vengono trasmessi ai servizi di Google – limitatamente alle autorizzazioni che hai concesso (email e drive.appdata) – in conformità con la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, inclusi i suoi requisiti di uso limitato (Limited Use). Consulta la sezione 5 qui sotto per i dettagli su cosa viene trasmesso a Google e perché.</p>
+    </div>
+
+    <div class="card" id="google-it">
+      <h2>5. Utilizzo dei servizi Google</h2>
+      <p>OWO Planner accede ai servizi Google solo quando sei tu ad agire, toccando «Accedi con Google». Questa sezione descrive in dettaglio quali dati utente di Google l'app riceve, perché, e come vengono utilizzati, conservati e protetti.</p>
+
+      <h3>A quali dati Google accediamo e perché</h3>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Dati</th><th>Autorizzazione (scope)</th><th>Perché è necessaria</th></tr>
+          <tr><td data-label="Dati">Indirizzo e-mail</td><td data-label="Autorizzazione (scope)">email</td><td data-label="Perché è necessaria">Per identificare il tuo account quando accedi. L'indirizzo non viene inviato allo sviluppatore e resta sul tuo dispositivo.</td></tr>
+          <tr><td data-label="Dati">Informazioni di base del profilo</td><td data-label="Autorizzazione (scope)">profile</td><td data-label="Perché è necessaria">Un'autorizzazione standard di Google Sign-In. L'app utilizza solo il tuo indirizzo e-mail; il tuo nome e la tua foto non vengono letti, utilizzati né conservati.</td></tr>
+          <tr><td data-label="Dati">La cartella dati nascosta dell'app nel tuo Google Drive (appDataFolder)</td><td data-label="Autorizzazione (scope)">https://www.googleapis.com/auth/drive.appdata</td><td data-label="Perché è necessaria">Per salvare e ripristinare un unico file di backup (owo-planner-data.json) con i dati del tuo planner: attività, abitudini, finanze, diario, foto. Serve a sincronizzare i tuoi dispositivi. L'app non può vedere né modificare nessun altro file nel tuo Google Drive.</td></tr>
+        </table>
+      </div>
+
+      <h3>Come utilizziamo i dati Google</h3>
+      <ul>
+        <li>I dati Google sono utilizzati solo per farti accedere e sincronizzare i tuoi dati tra i tuoi dispositivi, cioè solo per funzioni che puoi vedere nell'app.</li>
+        <li>Non vendiamo questi dati e non li condividiamo con terze parti, salvo quando richiesto dalla legge.</li>
+        <li>Non utilizziamo questi dati per la pubblicità, inclusa la pubblicità personalizzata o basata sugli interessi.</li>
+        <li>Non utilizziamo questi dati per sviluppare, migliorare o addestrare modelli di intelligenza artificiale o di apprendimento automatico.</li>
+        <li>Non abbiamo un server proprio, quindi né lo sviluppatore né altre persone hanno accesso al contenuto dei tuoi dati.</li>
+        <li>L'app non utilizza le API di Google per generare o elaborare immagini e non legge alcun altro file nel tuo Google Drive.</li>
+      </ul>
+
+      <h3>Come i dati Google vengono conservati e protetti</h3>
+      <ul>
+        <li>Il file di backup è conservato nella cartella nascosta dell'app nel tuo Google Drive personale, accessibile solo a questa app e solo nel tuo account.</li>
+        <li>Il token di accesso Google è conservato solo nella memoria temporanea dell'app e non viene scritto su disco.</li>
+        <li>Tutti i dati trasferiti tra l'app e i server di Google vengono inviati tramite una connessione HTTPS sicura.</li>
+      </ul>
+
+      <h3>Conservazione ed eliminazione dei dati Google</h3>
+      <ul>
+        <li>Il file di backup rimane nel tuo Google Drive finché non lo elimini.</li>
+        <li>Per eliminarlo, apri «Impostazioni → Account → Elimina account» nell'app. I tuoi dati vengono rimossi dal dispositivo e dalla cartella dell'app in Google Drive. Vedi la sezione 9 per i dettagli.</li>
+        <li>Puoi revocare in qualsiasi momento l'accesso dell'app al tuo Account Google nella <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">pagina delle autorizzazioni di Google</a>.</li>
+      </ul>
+
+      <p>L'uso e il trasferimento da parte di OWO Planner delle informazioni ricevute dalle API di Google rispettano la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, inclusi i requisiti di uso limitato (Limited Use).</p>
+    </div>
+
+    <div class="card" id="permissions-it">
+      <h2>6. Autorizzazioni dell'app sul dispositivo</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Autorizzazione</th><th>Finalità</th></tr>
+          <tr><td data-label="Autorizzazione">Fotocamera</td><td data-label="Finalità">Scattare foto da allegare ad attività/voci (richiesta solo quando usi questa funzione)</td></tr>
+          <tr><td data-label="Autorizzazione">Notifiche</td><td data-label="Finalità">Mostrare promemoria per attività, abitudini ed eventi</td></tr>
+          <tr><td data-label="Autorizzazione">Sveglie esatte</td><td data-label="Finalità">Consegna dei promemoria all'ora esatta programmata (facoltativa; l'app continua a funzionare senza)</td></tr>
+        </table>
+      </div>
+
+      <h3>Promemoria e sveglie esatte</h3>
+      <ul>
+        <li>L'app utilizza l'autorizzazione per le notifiche e l'accesso alle sveglie esatte per mostrare promemoria su attività, abitudini ed eventi del calendario all'ora che imposti tu stesso.</li>
+        <li>I promemoria vengono creati e pianificati localmente sul tuo dispositivo tramite gli strumenti di sistema di Android. Il server dello sviluppatore non è coinvolto e nessun dato viene inviato a terze parti a questo scopo.</li>
+        <li>Le sveglie esatte sono utilizzate solo per i promemoria che crei nell'app. Non le usiamo per pubblicità, analisi, tracciamento degli utenti o altri scopi.</li>
+        <li>Entrambe le autorizzazioni sono facoltative. Senza l'accesso alle sveglie esatte, i promemoria potrebbero scattare con minore precisione; tutte le altre funzioni dell'app funzionano normalmente.</li>
+        <li>Puoi attivare o disattivare queste autorizzazioni in qualsiasi momento nelle impostazioni di sistema Android per l'app.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="security-it">
+      <h2>7. Sicurezza</h2>
+      <ul>
+        <li>Tutti i dati trasferiti tra l'app e i server di Google utilizzano una connessione HTTPS sicura.</li>
+        <li>Alcuni valori sensibili sono conservati nell'archivio sicuro del dispositivo (Android Keystore).</li>
+        <li>Il backup delle app a livello di sistema di Android è disattivato: l'unica sincronizzazione avviene tramite il tuo Google Drive.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="retention-it">
+      <h2>8. Conservazione dei dati</h2>
+      <ul>
+        <li>I dati locali sono conservati sul tuo dispositivo finché non li elimini tu stesso (nell'app o disinstallando l'app).</li>
+        <li>I dati sincronizzati sono conservati nella cartella dati nascosta dell'app (appDataFolder) nel tuo Google Drive finché non li elimini manualmente o non elimini il tuo account nell'app.</li>
+        <li>Dopo una richiesta di eliminazione, i dati vengono rimossi seguendo la procedura descritta nella sezione 9 qui sotto.</li>
+        <li>Non conserviamo i dati più a lungo del necessario per il funzionamento dell'app e per le finalità descritte sopra.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="deletion-it">
+      <h2>9. Eliminazione dei tuoi dati</h2>
+      <p><b>Nell'app (il modo più rapido):</b> apri «Impostazioni → Account → Elimina account». Questo elimina immediatamente e in modo permanente tutti i dati dell'app dal tuo dispositivo e dalla cartella dell'app nel tuo Google Drive.</p>
+      <p><b>Senza installare l'app:</b> scrivi a <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> con l'oggetto «Eliminazione dei dati» indicando l'e-mail dell'account Google che hai usato nell'app. Poiché i tuoi dati non sono conservati sui nostri server ma sul tuo dispositivo e (se la sincronizzazione è attiva) nel tuo Google Drive, l'eliminazione completa richiede di solito solo di revocare l'accesso dell'app dalla <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">pagina delle autorizzazioni del tuo Account Google</a>, eliminare la cartella dati dell'app in Google Drive e disinstallare l'app dal dispositivo: saremo lieti di aiutarti e guidarti se necessario.</p>
+      <p>Rispondiamo a tali richieste entro 30 giorni.</p>
+    </div>
+
+    <div class="card" id="children-it">
+      <h2>10. Minori</h2>
+      <p>L'app non è rivolta a minori di 13 anni e non raccoglie consapevolmente dati da questo pubblico.</p>
+    </div>
+
+    <div class="card" id="changes-it">
+      <h2>11. Modifiche a questa informativa</h2>
+      <p>Potremmo aggiornare questa pagina di tanto in tanto. La data in alto indica l'ultima modifica. Le modifiche sostanziali saranno segnalate anche all'interno dell'app.</p>
+    </div>
+
+    <div class="card" id="contact-it">
+      <h2>12. Contatti</h2>
+      <p>Sviluppatore: <b>OWO Studio</b>.</p>
+      <p>Per qualsiasi domanda su privacy e trattamento dei dati, scrivi a <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a>.</p>
+    </div>
+
+  </div>
+
+  <div class="lang-block" id="lang-ja">
+
+    <div class="card toc">
+      <a href="#intro-ja">1. 概要</a>
+      <a href="#data-ja">2. 処理するデータ</a>
+      <a href="#storage-ja">3. データの保存場所</a>
+      <a href="#sharing-ja">4. 第三者へのデータ共有</a>
+      <a href="#google-ja">5. Googleサービスの利用</a>
+      <a href="#permissions-ja">6. アプリの権限</a>
+      <a href="#security-ja">7. セキュリティ</a>
+      <a href="#retention-ja">8. データの保存期間</a>
+      <a href="#deletion-ja">9. データの削除</a>
+      <a href="#children-ja">10. お子様について</a>
+      <a href="#changes-ja">11. 本ポリシーの変更</a>
+      <a href="#contact-ja">12. お問い合わせ</a>
+    </div>
+
+    <div class="card" id="intro-ja">
+      <h2>1. 概要</h2>
+      <p>OWO Planner（以下「本アプリ」「当社」）は、タスク、習慣、家計、日記、リマインダーを管理するプランナーアプリです。本アプリは<b>OWO Studio</b>が開発しています。アプリのトップページ：<a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>。このページでは、本アプリが処理するデータ、その保存方法、およびデータの削除方法について説明します。</p>
+      <p>本アプリを利用することで、本ポリシーの条件に同意したものとみなされます。</p>
+    </div>
+
+    <div class="card" id="data-ja">
+      <h2>2. 処理するデータ</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>データの種類</th><th>取得元</th><th>目的</th></tr>
+          <tr><td data-label="データの種類">メールアドレス</td><td data-label="取得元">Googleでログイン</td><td data-label="目的">アカウント認証および端末間の同期</td></tr>
+          <tr><td data-label="データの種類">タスク、習慣、メモ、カレンダーの予定</td><td data-label="取得元">アプリ内でユーザーが入力</td><td data-label="目的">アプリの基本機能</td></tr>
+          <tr><td data-label="データの種類">収入・支出の記録（「家計」タブ）</td><td data-label="取得元">アプリ内でユーザーが入力</td><td data-label="目的">アプリ内での個人の家計管理</td></tr>
+          <tr><td data-label="データの種類">日記の記録（睡眠、エネルギー、気分、思考）</td><td data-label="取得元">アプリ内でユーザーが入力</td><td data-label="目的">個人の自己観察日記</td></tr>
+          <tr><td data-label="データの種類">写真</td><td data-label="取得元">端末のカメラまたはギャラリー（この機能を使用したときのみ）</td><td data-label="目的">タスクや記録に添付されます。アプリのデータとともに端末内に保存され、同期が有効な場合はお客様のGoogleドライブ（appDataFolder）に送信されることがあります</td></tr>
+        </table>
+      </div>
+      <p>当社は、位置情報、連絡先、SMS、音声録音、閲覧履歴を要求または収集しません。</p>
+    </div>
+
+    <div class="card" id="storage-ja">
+      <h2>3. データの保存場所</h2>
+      <p>データは<b>お客様の端末内</b>に保存されます。同期が有効な場合、コピーが<b>お客様のGoogleドライブ</b>（アプリの非表示データフォルダ – drive.appdata）に保存されます。このフォルダには、本アプリのみが、お客様のアカウント内でのみアクセスできます。</p>
+      <p>当社は、お客様のデータを受信する独自のサーバーを運用していません。当社は、お客様のタスク、家計、日記、写真の内容を閲覧することも保存することもできません。これらはお客様の端末と個人のクラウドストレージに保持されます。</p>
+    </div>
+
+    <div class="card" id="sharing-ja">
+      <h2>4. 第三者へのデータ共有</h2>
+      <p>当社は、お客様のデータを販売せず、広告や分析の目的で第三者と共有しません。本アプリは、ユーザーを追跡する広告・分析用SDKを使用していません。</p>
+      <p>Googleログインと同期を使用すると、データはお客様が許可した権限（emailおよびdrive.appdata）の範囲内でGoogleのサービスに送信されます。これは、限定的使用（Limited Use）要件を含む<a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>に従って行われます。Googleに何が、なぜ送信されるのかの詳細は、下記のセクション5をご覧ください。</p>
+    </div>
+
+    <div class="card" id="google-ja">
+      <h2>5. Googleサービスの利用</h2>
+      <p>OWO Plannerは、お客様が「Googleでログイン」をタップするなど、操作を行ったときにのみGoogleサービスにアクセスします。このセクションでは、本アプリがどのGoogleユーザーデータを受け取るのか、その理由、およびその利用・保存・保護の方法を詳しく説明します。</p>
+
+      <h3>アクセスするGoogleデータとその理由</h3>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>データ</th><th>権限（スコープ）</th><th>必要な理由</th></tr>
+          <tr><td data-label="データ">メールアドレス</td><td data-label="権限（スコープ）">email</td><td data-label="必要な理由">ログイン時にアカウントを識別するため。このアドレスは開発者には送信されず、お客様の端末内にとどまります。</td></tr>
+          <tr><td data-label="データ">基本的なプロフィール情報</td><td data-label="権限（スコープ）">profile</td><td data-label="必要な理由">Googleログインの標準的な権限です。本アプリが使用するのはメールアドレスのみで、お名前や写真は読み取り・使用・保存されません。</td></tr>
+          <tr><td data-label="データ">お客様のGoogleドライブ内にあるアプリの非表示データフォルダ（appDataFolder）</td><td data-label="権限（スコープ）">https://www.googleapis.com/auth/drive.appdata</td><td data-label="必要な理由">プランナーのデータ（タスク、習慣、家計、日記、写真）を含む単一のバックアップファイル（owo-planner-data.json）を保存・復元するため。端末間の同期に使用されます。本アプリは、お客様のGoogleドライブ内のほかのファイルを閲覧・変更することはできません。</td></tr>
+        </table>
+      </div>
+
+      <h3>Googleデータの利用方法</h3>
+      <ul>
+        <li>Googleのデータは、ログインと端末間でのデータ同期のみ、つまりアプリ内で確認できる機能のためにのみ使用されます。</li>
+        <li>当社はこれらのデータを販売せず、法律で義務付けられている場合を除き、第三者と共有しません。</li>
+        <li>当社は、パーソナライズ広告や興味関心に基づく広告を含め、これらのデータを広告に使用しません。</li>
+        <li>当社は、これらのデータを人工知能や機械学習モデルの開発、改善、学習に使用しません。</li>
+        <li>当社は独自のサーバーを持たないため、開発者を含め誰もお客様のデータの内容にアクセスすることはできません。</li>
+        <li>本アプリは、画像の生成や処理にGoogle APIを使用せず、お客様のGoogleドライブ内のほかのファイルを読み取りません。</li>
+      </ul>
+
+      <h3>Googleデータの保存と保護</h3>
+      <ul>
+        <li>バックアップファイルは、お客様個人のGoogleドライブ内にあるアプリの非表示フォルダに保管され、本アプリのみが、お客様のアカウント内でのみアクセスできます。</li>
+        <li>Googleのアクセストークンは、アプリの一時メモリ内にのみ保持され、ディスクには書き込まれません。</li>
+        <li>本アプリとGoogleのサーバー間で転送されるすべてのデータは、安全なHTTPS接続で送信されます。</li>
+      </ul>
+
+      <h3>Googleデータの保存期間と削除</h3>
+      <ul>
+        <li>バックアップファイルは、お客様が削除するまでGoogleドライブに残ります。</li>
+        <li>削除するには、アプリで「設定 → アカウント → アカウントを削除」を開いてください。データは端末およびGoogleドライブ内のアプリフォルダから削除されます。詳細はセクション9をご覧ください。</li>
+        <li>本アプリによるGoogleアカウントへのアクセスは、<a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Googleの権限ページ</a>でいつでも取り消すことができます。</li>
+      </ul>
+
+      <p>OWO Plannerによる、Google APIから受け取った情報の利用および転送は、限定的使用（Limited Use）要件を含む<a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>に準拠しています。</p>
+    </div>
+
+    <div class="card" id="permissions-ja">
+      <h2>6. 端末上のアプリの権限</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>権限</th><th>目的</th></tr>
+          <tr><td data-label="権限">カメラ</td><td data-label="目的">タスクや記録に添付する写真の撮影（この機能を使用したときのみ要求されます）</td></tr>
+          <tr><td data-label="権限">通知</td><td data-label="目的">タスク、習慣、予定のリマインダーの表示</td></tr>
+          <tr><td data-label="権限">正確なアラーム</td><td data-label="目的">設定した正確な時刻にリマインダーを届けるため（任意。この権限がなくてもアプリは動作します）</td></tr>
+        </table>
+      </div>
+
+      <h3>リマインダーと正確なアラーム</h3>
+      <ul>
+        <li>本アプリは、お客様が設定した時刻にタスク、習慣、カレンダーの予定のリマインダーを表示するために、通知権限と正確なアラームへのアクセスを使用します。</li>
+        <li>リマインダーは、Androidのシステムツールを使用して端末内で作成・スケジュールされます。開発者のサーバーは関与せず、この目的でデータが第三者に送信されることはありません。</li>
+        <li>正確なアラームは、お客様がアプリで作成したリマインダーにのみ使用されます。広告、分析、ユーザーの追跡、その他の目的には使用しません。</li>
+        <li>どちらの権限も任意です。正確なアラームへのアクセスがない場合、リマインダーの通知精度が下がることがありますが、アプリのほかの機能は通常どおり動作します。</li>
+        <li>これらの権限は、Androidのシステム設定のアプリ項目からいつでもオン・オフできます。</li>
+      </ul>
+    </div>
+
+    <div class="card" id="security-ja">
+      <h2>7. セキュリティ</h2>
+      <ul>
+        <li>本アプリとGoogleのサーバー間で転送されるすべてのデータは、安全なHTTPS接続を使用します。</li>
+        <li>一部の機密性の高い値は、端末のセキュアストレージ（Android Keystore）に保存されます。</li>
+        <li>Androidのシステムレベルのアプリバックアップは無効になっており、同期はお客様ご自身のGoogleドライブを通じてのみ行われます。</li>
+      </ul>
+    </div>
+
+    <div class="card" id="retention-ja">
+      <h2>8. データの保存期間</h2>
+      <ul>
+        <li>ローカルデータは、お客様ご自身が削除する（アプリ内で、またはアプリをアンインストールして）まで、端末内に保存されます。</li>
+        <li>同期されたデータは、お客様が手動で削除するか、アプリでアカウントを削除するまで、Googleドライブ内のアプリの非表示データフォルダ（appDataFolder）に保存されます。</li>
+        <li>削除のリクエスト後、データは下記のセクション9に記載の手順に従って削除されます。</li>
+        <li>当社は、アプリの運営および上記の目的に必要な期間を超えてデータを保持しません。</li>
+      </ul>
+    </div>
+
+    <div class="card" id="deletion-ja">
+      <h2>9. データの削除</h2>
+      <p><b>アプリ内で（最も早い方法）：</b>「設定 → アカウント → アカウントを削除」を開きます。これにより、端末およびGoogleドライブ内のアプリフォルダからすべてのアプリデータが直ちに完全に削除されます。</p>
+      <p><b>アプリをインストールせずに：</b>件名を「データ削除」として<a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a>までメールを送り、アプリで使用したGoogleアカウントのメールアドレスをお知らせください。お客様のデータは当社のサーバーではなく、端末および（同期が有効な場合は）Googleドライブに保存されているため、完全な削除は通常、<a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Googleアカウントの権限ページ</a>でアプリのアクセスを取り消し、Googleドライブ内のアプリのデータフォルダを削除し、端末からアプリをアンインストールするだけで完了します。必要に応じて、喜んでサポートし、手順をご案内します。</p>
+      <p>このようなリクエストには30日以内に対応します。</p>
+    </div>
+
+    <div class="card" id="children-ja">
+      <h2>10. お子様について</h2>
+      <p>本アプリは13歳未満のお子様を対象としておらず、この年齢層から故意にデータを収集することはありません。</p>
+    </div>
+
+    <div class="card" id="changes-ja">
+      <h2>11. 本ポリシーの変更</h2>
+      <p>当社は、このページを随時更新することがあります。上部の日付は最終更新日を示します。重要な変更は、アプリ内でもお知らせします。</p>
+    </div>
+
+    <div class="card" id="contact-ja">
+      <h2>12. お問い合わせ</h2>
+      <p>開発者：<b>OWO Studio</b>。</p>
+      <p>プライバシーやデータの取り扱いに関するご質問は、<a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a>までメールでお問い合わせください。</p>
+    </div>
+
+  </div>
+
+  <div class="lang-block" id="lang-pl">
+
+    <div class="card toc">
+      <a href="#intro-pl">1. Informacje ogólne</a>
+      <a href="#data-pl">2. Jakie dane przetwarzamy</a>
+      <a href="#storage-pl">3. Gdzie przechowywane są dane</a>
+      <a href="#sharing-pl">4. Udostępnianie danych osobom trzecim</a>
+      <a href="#google-pl">5. Korzystanie z usług Google</a>
+      <a href="#permissions-pl">6. Uprawnienia aplikacji</a>
+      <a href="#security-pl">7. Bezpieczeństwo</a>
+      <a href="#retention-pl">8. Okres przechowywania danych</a>
+      <a href="#deletion-pl">9. Usuwanie Twoich danych</a>
+      <a href="#children-pl">10. Dzieci</a>
+      <a href="#changes-pl">11. Zmiany w niniejszej polityce</a>
+      <a href="#contact-pl">12. Kontakt</a>
+    </div>
+
+    <div class="card" id="intro-pl">
+      <h2>1. Informacje ogólne</h2>
+      <p>OWO Planner („aplikacja”, „my”) to planer zadań, nawyków, finansów, dziennika i przypomnień. Aplikację tworzy <b>OWO Studio</b>. Strona główna aplikacji: <a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>. Ta strona opisuje, jakie dane przetwarza aplikacja, jak są one przechowywane i jak możesz je usunąć.</p>
+      <p>Korzystając z aplikacji, akceptujesz warunki niniejszej polityki.</p>
+    </div>
+
+    <div class="card" id="data-pl">
+      <h2>2. Jakie dane przetwarzamy</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Rodzaj danych</th><th>Źródło</th><th>Cel</th></tr>
+          <tr><td data-label="Rodzaj danych">Adres e-mail</td><td data-label="Źródło">Logowanie przez Google</td><td data-label="Cel">Uwierzytelnianie konta i synchronizacja między urządzeniami</td></tr>
+          <tr><td data-label="Rodzaj danych">Zadania, nawyki, notatki, wydarzenia kalendarza</td><td data-label="Źródło">Wprowadzane przez Ciebie w aplikacji</td><td data-label="Cel">Podstawowe funkcje aplikacji</td></tr>
+          <tr><td data-label="Rodzaj danych">Wpisy dotyczące przychodów/wydatków (zakładka „Finanse”)</td><td data-label="Źródło">Wprowadzane przez Ciebie w aplikacji</td><td data-label="Cel">Prowadzenie osobistych finansów w aplikacji</td></tr>
+          <tr><td data-label="Rodzaj danych">Wpisy w dzienniku (sen, energia, nastrój, myśli)</td><td data-label="Źródło">Wprowadzane przez Ciebie w aplikacji</td><td data-label="Cel">Osobisty dziennik samoobserwacji</td></tr>
+          <tr><td data-label="Rodzaj danych">Zdjęcia</td><td data-label="Źródło">Aparat lub galeria urządzenia (tylko gdy korzystasz z tej funkcji)</td><td data-label="Cel">Dołączane do zadań/wpisów; przechowywane lokalnie razem z danymi aplikacji, a po włączeniu synchronizacji mogą być przesyłane do Twojego magazynu Google Drive (appDataFolder)</td></tr>
+        </table>
+      </div>
+      <p>Nie żądamy ani nie zbieramy lokalizacji, kontaktów, wiadomości SMS, nagrań audio ani historii przeglądania.</p>
+    </div>
+
+    <div class="card" id="storage-pl">
+      <h2>3. Gdzie przechowywane są dane</h2>
+      <p>Dane są przechowywane <b>lokalnie na Twoim urządzeniu</b>. Po włączeniu synchronizacji kopia jest zapisywana na <b>Twoim Dysku Google</b> (w ukrytym folderze danych aplikacji – drive.appdata), dostępnym tylko dla tej aplikacji i tylko w ramach Twojego konta.</p>
+      <p>Nie prowadzimy własnego serwera, który odbierałby Twoje dane. Nie widzimy ani nie przechowujemy zawartości Twoich zadań, finansów, dziennika ani zdjęć – pozostaje ona na Twoim urządzeniu i w Twoim osobistym magazynie w chmurze.</p>
+    </div>
+
+    <div class="card" id="sharing-pl">
+      <h2>4. Udostępnianie danych osobom trzecim</h2>
+      <p>Nie sprzedajemy Twoich danych i nie udostępniamy ich osobom trzecim do celów reklamowych ani analitycznych. Aplikacja nie korzysta z reklamowych ani analitycznych pakietów SDK śledzących użytkowników.</p>
+      <p>Gdy korzystasz z Google Sign-In i synchronizacji, dane są przesyłane do usług Google – w zakresie ograniczonym do przyznanych przez Ciebie uprawnień (email i drive.appdata) – zgodnie z <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, w tym z jej wymogami ograniczonego wykorzystania (Limited Use). Szczegóły dotyczące tego, co jest przesyłane do Google i dlaczego, znajdziesz w sekcji 5 poniżej.</p>
+    </div>
+
+    <div class="card" id="google-pl">
+      <h2>5. Korzystanie z usług Google</h2>
+      <p>OWO Planner korzysta z usług Google tylko wtedy, gdy sam podejmujesz działanie – stukając „Zaloguj się przez Google”. Ta sekcja szczegółowo opisuje, jakie dane użytkownika Google otrzymuje aplikacja, w jakim celu oraz jak są one wykorzystywane, przechowywane i chronione.</p>
+
+      <h3>Do jakich danych Google uzyskujemy dostęp i dlaczego</h3>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Dane</th><th>Uprawnienie (scope)</th><th>Dlaczego jest potrzebne</th></tr>
+          <tr><td data-label="Dane">Adres e-mail</td><td data-label="Uprawnienie (scope)">email</td><td data-label="Dlaczego jest potrzebne">Aby zidentyfikować Twoje konto podczas logowania. Adres nie jest wysyłany do twórcy i pozostaje na Twoim urządzeniu.</td></tr>
+          <tr><td data-label="Dane">Podstawowe informacje o profilu</td><td data-label="Uprawnienie (scope)">profile</td><td data-label="Dlaczego jest potrzebne">Standardowe uprawnienie Google Sign-In. Aplikacja wykorzystuje wyłącznie Twój adres e-mail; Twoje imię i nazwisko oraz zdjęcie nie są odczytywane, wykorzystywane ani przechowywane.</td></tr>
+          <tr><td data-label="Dane">Ukryty folder danych aplikacji na Twoim Dysku Google (appDataFolder)</td><td data-label="Uprawnienie (scope)">https://www.googleapis.com/auth/drive.appdata</td><td data-label="Dlaczego jest potrzebne">Aby zapisywać i przywracać pojedynczy plik kopii zapasowej (owo-planner-data.json) z danymi planera: zadaniami, nawykami, finansami, dziennikiem, zdjęciami. Służy do synchronizacji między Twoimi urządzeniami. Aplikacja nie może zobaczyć ani zmienić żadnych innych plików na Twoim Dysku Google.</td></tr>
+        </table>
+      </div>
+
+      <h3>Jak wykorzystujemy dane Google</h3>
+      <ul>
+        <li>Dane Google są wykorzystywane wyłącznie do zalogowania Cię i synchronizacji Twoich danych między urządzeniami – czyli tylko do funkcji widocznych w aplikacji.</li>
+        <li>Nie sprzedajemy tych danych i nie udostępniamy ich osobom trzecim, chyba że wymaga tego prawo.</li>
+        <li>Nie wykorzystujemy tych danych do reklam, w tym reklam spersonalizowanych lub opartych na zainteresowaniach.</li>
+        <li>Nie wykorzystujemy tych danych do tworzenia, ulepszania ani trenowania modeli sztucznej inteligencji lub uczenia maszynowego.</li>
+        <li>Nie mamy własnego serwera, więc ani twórca, ani żadna inna osoba nie ma dostępu do zawartości Twoich danych.</li>
+        <li>Aplikacja nie korzysta z interfejsów API Google do generowania ani przetwarzania obrazów i nie odczytuje żadnych innych plików na Twoim Dysku Google.</li>
+      </ul>
+
+      <h3>Jak dane Google są przechowywane i chronione</h3>
+      <ul>
+        <li>Plik kopii zapasowej jest przechowywany w ukrytym folderze aplikacji na Twoim osobistym Dysku Google, dostępnym tylko dla tej aplikacji i tylko na Twoim koncie.</li>
+        <li>Token dostępu Google jest przechowywany wyłącznie w pamięci tymczasowej aplikacji i nie jest zapisywany na dysku.</li>
+        <li>Wszystkie dane przesyłane między aplikacją a serwerami Google są wysyłane bezpiecznym połączeniem HTTPS.</li>
+      </ul>
+
+      <h3>Przechowywanie i usuwanie danych Google</h3>
+      <ul>
+        <li>Plik kopii zapasowej pozostaje na Twoim Dysku Google, dopóki go nie usuniesz.</li>
+        <li>Aby go usunąć, otwórz w aplikacji „Ustawienia → Konto → Usuń konto”. Twoje dane zostaną usunięte z urządzenia i z folderu aplikacji na Dysku Google. Szczegóły znajdziesz w sekcji 9.</li>
+        <li>Możesz w każdej chwili cofnąć aplikacji dostęp do Twojego konta Google na <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">stronie uprawnień Google</a>.</li>
+      </ul>
+
+      <p>Wykorzystywanie i przekazywanie przez OWO Planner informacji uzyskanych z interfejsów API Google jest zgodne z <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, w tym z wymogami ograniczonego wykorzystania (Limited Use).</p>
+    </div>
+
+    <div class="card" id="permissions-pl">
+      <h2>6. Uprawnienia aplikacji na urządzeniu</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Uprawnienie</th><th>Cel</th></tr>
+          <tr><td data-label="Uprawnienie">Aparat</td><td data-label="Cel">Robienie zdjęć do dołączenia do zadań/wpisów (żądane tylko wtedy, gdy korzystasz z tej funkcji)</td></tr>
+          <tr><td data-label="Uprawnienie">Powiadomienia</td><td data-label="Cel">Wyświetlanie przypomnień o zadaniach, nawykach i wydarzeniach</td></tr>
+          <tr><td data-label="Uprawnienie">Dokładne alarmy</td><td data-label="Cel">Dostarczanie przypomnień dokładnie o zaplanowanej godzinie (opcjonalne; aplikacja działa także bez tego uprawnienia)</td></tr>
+        </table>
+      </div>
+
+      <h3>Przypomnienia i dokładne alarmy</h3>
+      <ul>
+        <li>Aplikacja korzysta z uprawnienia do powiadomień i dostępu do dokładnych alarmów, aby wyświetlać przypomnienia o zadaniach, nawykach i wydarzeniach kalendarza o godzinie, którą sam ustawisz.</li>
+        <li>Przypomnienia są tworzone i planowane lokalnie na Twoim urządzeniu za pomocą narzędzi systemu Android. Serwer twórcy nie bierze w tym udziału i w tym celu żadne dane nie są wysyłane osobom trzecim.</li>
+        <li>Dokładne alarmy są używane wyłącznie do przypomnień tworzonych przez Ciebie w aplikacji. Nie wykorzystujemy ich do reklam, analityki, śledzenia użytkowników ani w żadnym innym celu.</li>
+        <li>Oba uprawnienia są opcjonalne. Bez dostępu do dokładnych alarmów przypomnienia mogą uruchamiać się mniej precyzyjnie; wszystkie pozostałe funkcje aplikacji działają normalnie.</li>
+        <li>Możesz w dowolnym momencie włączyć lub wyłączyć te uprawnienia w ustawieniach systemowych Androida dla aplikacji.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="security-pl">
+      <h2>7. Bezpieczeństwo</h2>
+      <ul>
+        <li>Wszystkie dane przesyłane między aplikacją a serwerami Google korzystają z bezpiecznego połączenia HTTPS.</li>
+        <li>Wybrane wrażliwe wartości są przechowywane w bezpiecznej pamięci urządzenia (Android Keystore).</li>
+        <li>Systemowa kopia zapasowa aplikacji w Androidzie jest wyłączona – jedyna synchronizacja odbywa się przez Twój własny Dysk Google.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="retention-pl">
+      <h2>8. Okres przechowywania danych</h2>
+      <ul>
+        <li>Dane lokalne są przechowywane na Twoim urządzeniu, dopóki sam ich nie usuniesz (w aplikacji lub przez odinstalowanie aplikacji).</li>
+        <li>Zsynchronizowane dane są przechowywane w ukrytym folderze danych aplikacji (appDataFolder) na Twoim Dysku Google, dopóki ich ręcznie nie usuniesz lub nie usuniesz konta w aplikacji.</li>
+        <li>Po wniosku o usunięcie dane są usuwane zgodnie z procedurą opisaną w sekcji 9 poniżej.</li>
+        <li>Nie przechowujemy danych dłużej, niż jest to konieczne do działania aplikacji i do celów opisanych powyżej.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="deletion-pl">
+      <h2>9. Usuwanie Twoich danych</h2>
+      <p><b>W aplikacji (najszybszy sposób):</b> otwórz „Ustawienia → Konto → Usuń konto”. Spowoduje to natychmiastowe i trwałe usunięcie wszystkich danych aplikacji z Twojego urządzenia i z folderu aplikacji na Twoim Dysku Google.</p>
+      <p><b>Bez instalowania aplikacji:</b> napisz na adres <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> z tematem „Usunięcie danych” i podaj adres e-mail konta Google używanego w aplikacji. Ponieważ Twoje dane są przechowywane nie na naszych serwerach, lecz na Twoim urządzeniu i (jeśli synchronizacja jest włączona) na Twoim Dysku Google, pełne usunięcie zwykle sprowadza się do cofnięcia dostępu aplikacji na <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">stronie uprawnień Twojego konta Google</a>, usunięcia folderu danych aplikacji na Dysku Google i odinstalowania aplikacji z urządzenia – chętnie pomożemy i w razie potrzeby przeprowadzimy Cię przez ten proces.</p>
+      <p>Odpowiadamy na takie prośby w ciągu 30 dni.</p>
+    </div>
+
+    <div class="card" id="children-pl">
+      <h2>10. Dzieci</h2>
+      <p>Aplikacja nie jest skierowana do dzieci poniżej 13. roku życia i świadomie nie zbiera danych od tej grupy odbiorców.</p>
+    </div>
+
+    <div class="card" id="changes-pl">
+      <h2>11. Zmiany w niniejszej polityce</h2>
+      <p>Możemy od czasu do czasu aktualizować tę stronę. Data na górze odzwierciedla ostatnią zmianę. O istotnych zmianach poinformujemy także w aplikacji.</p>
+    </div>
+
+    <div class="card" id="contact-pl">
+      <h2>12. Kontakt</h2>
+      <p>Twórca: <b>OWO Studio</b>.</p>
+      <p>W przypadku pytań dotyczących prywatności i przetwarzania danych napisz na adres <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a>.</p>
+    </div>
+
+  </div>
+
+  <div class="lang-block" id="lang-pt">
+
+    <div class="card toc">
+      <a href="#intro-pt">1. Visão geral</a>
+      <a href="#data-pt">2. Quais dados tratamos</a>
+      <a href="#storage-pt">3. Onde os dados são armazenados</a>
+      <a href="#sharing-pt">4. Compartilhamento de dados com terceiros</a>
+      <a href="#google-pt">5. Uso dos serviços do Google</a>
+      <a href="#permissions-pt">6. Permissões do aplicativo</a>
+      <a href="#security-pt">7. Segurança</a>
+      <a href="#retention-pt">8. Retenção de dados</a>
+      <a href="#deletion-pt">9. Exclusão dos seus dados</a>
+      <a href="#children-pt">10. Crianças</a>
+      <a href="#changes-pt">11. Alterações nesta política</a>
+      <a href="#contact-pt">12. Contato</a>
+    </div>
+
+    <div class="card" id="intro-pt">
+      <h2>1. Visão geral</h2>
+      <p>O OWO Planner («o aplicativo», «nós») é um planejador de tarefas, hábitos, finanças, diário e lembretes. O aplicativo é desenvolvido pela <b>OWO Studio</b>. Página inicial do aplicativo: <a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>. Esta página descreve quais dados o aplicativo trata, como são armazenados e como você pode excluí-los.</p>
+      <p>Ao usar o aplicativo, você concorda com os termos desta política.</p>
+    </div>
+
+    <div class="card" id="data-pt">
+      <h2>2. Quais dados tratamos</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Tipo de dados</th><th>Origem</th><th>Finalidade</th></tr>
+          <tr><td data-label="Tipo de dados">Endereço de e-mail</td><td data-label="Origem">Login com o Google</td><td data-label="Finalidade">Autenticação da conta e sincronização entre dispositivos</td></tr>
+          <tr><td data-label="Tipo de dados">Tarefas, hábitos, notas, eventos do calendário</td><td data-label="Origem">Inseridos por você no aplicativo</td><td data-label="Finalidade">Funcionalidade principal do aplicativo</td></tr>
+          <tr><td data-label="Tipo de dados">Registros de receitas/despesas (aba «Finanças»)</td><td data-label="Origem">Inseridos por você no aplicativo</td><td data-label="Finalidade">Controle de finanças pessoais dentro do aplicativo</td></tr>
+          <tr><td data-label="Tipo de dados">Entradas do diário (sono, energia, humor, pensamentos)</td><td data-label="Origem">Inseridos por você no aplicativo</td><td data-label="Finalidade">Diário pessoal de autoacompanhamento</td></tr>
+          <tr><td data-label="Tipo de dados">Fotos</td><td data-label="Origem">Câmera ou galeria do dispositivo (somente quando você usa este recurso)</td><td data-label="Finalidade">Anexadas a tarefas/entradas; armazenadas localmente junto com os dados do aplicativo e, se a sincronização estiver ativada, podem ser transmitidas ao seu armazenamento do Google Drive (appDataFolder)</td></tr>
+        </table>
+      </div>
+      <p>Não solicitamos nem coletamos localização, contatos, SMS, gravações de áudio ou histórico de navegação.</p>
+    </div>
+
+    <div class="card" id="storage-pt">
+      <h2>3. Onde os dados são armazenados</h2>
+      <p>Os dados são armazenados <b>localmente no seu dispositivo</b>. Quando a sincronização está ativada, uma cópia é salva no <b>seu Google Drive</b> (na pasta de dados oculta do aplicativo – drive.appdata), acessível apenas a este aplicativo e somente dentro da sua conta.</p>
+      <p>Não operamos um servidor próprio que receba seus dados. Não podemos ver nem armazenar o conteúdo das suas tarefas, finanças, diário ou fotos – ele permanece no seu dispositivo e no seu armazenamento pessoal na nuvem.</p>
+    </div>
+
+    <div class="card" id="sharing-pt">
+      <h2>4. Compartilhamento de dados com terceiros</h2>
+      <p>Não vendemos seus dados e não os compartilhamos com terceiros para fins de publicidade ou análise. O aplicativo não usa SDKs de publicidade ou de análise que rastreiem usuários.</p>
+      <p>Quando você usa o Google Sign-In e a sincronização, os dados são transmitidos aos serviços do Google – limitados às permissões que você concedeu (email e drive.appdata) – de acordo com a <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, incluindo seus requisitos de uso limitado (Limited Use). Consulte a seção 5 abaixo para detalhes sobre o que é transmitido ao Google e por quê.</p>
+    </div>
+
+    <div class="card" id="google-pt">
+      <h2>5. Uso dos serviços do Google</h2>
+      <p>O OWO Planner acessa os serviços do Google somente quando você toma uma ação – ao tocar em «Fazer login com o Google». Esta seção descreve em detalhes quais dados de usuário do Google o aplicativo recebe, por quê, e como são usados, armazenados e protegidos.</p>
+
+      <h3>Quais dados do Google acessamos e por quê</h3>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Dados</th><th>Permissão (scope)</th><th>Por que é necessária</th></tr>
+          <tr><td data-label="Dados">Endereço de e-mail</td><td data-label="Permissão (scope)">email</td><td data-label="Por que é necessária">Para identificar sua conta quando você faz login. O endereço não é enviado ao desenvolvedor e permanece no seu dispositivo.</td></tr>
+          <tr><td data-label="Dados">Informações básicas do perfil</td><td data-label="Permissão (scope)">profile</td><td data-label="Por que é necessária">Uma permissão padrão do Google Sign-In. O aplicativo usa apenas o seu endereço de e-mail; seu nome e sua foto não são lidos, usados nem armazenados.</td></tr>
+          <tr><td data-label="Dados">A pasta de dados oculta do aplicativo no seu Google Drive (appDataFolder)</td><td data-label="Permissão (scope)">https://www.googleapis.com/auth/drive.appdata</td><td data-label="Por que é necessária">Para armazenar e restaurar um único arquivo de backup (owo-planner-data.json) com os dados do seu planejador: tarefas, hábitos, finanças, diário, fotos. É usado para sincronizar entre os seus dispositivos. O aplicativo não pode ver nem alterar nenhum outro arquivo do seu Google Drive.</td></tr>
+        </table>
+      </div>
+
+      <h3>Como usamos os dados do Google</h3>
+      <ul>
+        <li>Os dados do Google são usados somente para fazer seu login e sincronizar seus dados entre seus dispositivos – ou seja, apenas para recursos que você vê no aplicativo.</li>
+        <li>Não vendemos esses dados e não os compartilhamos com terceiros, exceto quando exigido por lei.</li>
+        <li>Não usamos esses dados para publicidade, incluindo publicidade personalizada ou baseada em interesses.</li>
+        <li>Não usamos esses dados para desenvolver, melhorar ou treinar modelos de inteligência artificial ou de aprendizado de máquina.</li>
+        <li>Não temos servidor próprio, portanto nem o desenvolvedor nem qualquer outra pessoa tem acesso ao conteúdo dos seus dados.</li>
+        <li>O aplicativo não usa as APIs do Google para gerar ou processar imagens e não lê nenhum outro arquivo do seu Google Drive.</li>
+      </ul>
+
+      <h3>Como os dados do Google são armazenados e protegidos</h3>
+      <ul>
+        <li>O arquivo de backup é mantido na pasta oculta do aplicativo no seu Google Drive pessoal, acessível apenas a este aplicativo e somente na sua conta.</li>
+        <li>O token de acesso do Google é mantido apenas na memória temporária do aplicativo e não é gravado em disco.</li>
+        <li>Todos os dados transferidos entre o aplicativo e os servidores do Google são enviados por uma conexão HTTPS segura.</li>
+      </ul>
+
+      <h3>Retenção e exclusão dos dados do Google</h3>
+      <ul>
+        <li>O arquivo de backup permanece no seu Google Drive até que você o exclua.</li>
+        <li>Para excluí-lo, abra «Configurações → Conta → Excluir conta» no aplicativo. Seus dados são removidos do dispositivo e da pasta do aplicativo no Google Drive. Veja a seção 9 para detalhes.</li>
+        <li>Você pode revogar o acesso do aplicativo à sua Conta do Google a qualquer momento na <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">página de permissões do Google</a>.</li>
+      </ul>
+
+      <p>O uso e a transferência, pelo OWO Planner, de informações recebidas das APIs do Google estão em conformidade com a <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, incluindo os requisitos de uso limitado (Limited Use).</p>
+    </div>
+
+    <div class="card" id="permissions-pt">
+      <h2>6. Permissões do aplicativo no dispositivo</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Permissão</th><th>Finalidade</th></tr>
+          <tr><td data-label="Permissão">Câmera</td><td data-label="Finalidade">Tirar fotos para anexar a tarefas/entradas (solicitada somente quando você usa este recurso)</td></tr>
+          <tr><td data-label="Permissão">Notificações</td><td data-label="Finalidade">Exibir lembretes de tarefas, hábitos e eventos</td></tr>
+          <tr><td data-label="Permissão">Alarmes exatos</td><td data-label="Finalidade">Entregar lembretes no horário exato programado (opcional; o aplicativo continua funcionando sem ela)</td></tr>
+        </table>
+      </div>
+
+      <h3>Lembretes e alarmes exatos</h3>
+      <ul>
+        <li>O aplicativo usa a permissão de notificações e o acesso a alarmes exatos para exibir lembretes sobre tarefas, hábitos e eventos do calendário no horário que você mesmo define.</li>
+        <li>Os lembretes são criados e agendados localmente no seu dispositivo por meio das ferramentas do sistema Android. O servidor do desenvolvedor não participa e nenhum dado é enviado a terceiros para essa finalidade.</li>
+        <li>Os alarmes exatos são usados apenas para os lembretes que você cria no aplicativo. Não os usamos para publicidade, análise, rastreamento de usuários ou qualquer outra finalidade.</li>
+        <li>Ambas as permissões são opcionais. Sem acesso a alarmes exatos, os lembretes podem disparar com menos precisão; todos os outros recursos do aplicativo funcionam normalmente.</li>
+        <li>Você pode ativar ou desativar essas permissões a qualquer momento nas configurações do sistema Android para o aplicativo.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="security-pt">
+      <h2>7. Segurança</h2>
+      <ul>
+        <li>Todos os dados transferidos entre o aplicativo e os servidores do Google usam uma conexão HTTPS segura.</li>
+        <li>Alguns valores sensíveis são armazenados no armazenamento seguro do dispositivo (Android Keystore).</li>
+        <li>O backup de aplicativos no nível do sistema Android está desativado – a única sincronização ocorre pelo seu próprio Google Drive.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="retention-pt">
+      <h2>8. Retenção de dados</h2>
+      <ul>
+        <li>Os dados locais ficam armazenados no seu dispositivo até que você mesmo os exclua (no aplicativo ou desinstalando o aplicativo).</li>
+        <li>Os dados sincronizados ficam armazenados na pasta de dados oculta do aplicativo (appDataFolder) no seu Google Drive até que você os exclua manualmente ou exclua sua conta no aplicativo.</li>
+        <li>Após uma solicitação de exclusão, os dados são removidos conforme o processo descrito na seção 9 abaixo.</li>
+        <li>Não retemos dados por mais tempo do que o necessário para o funcionamento do aplicativo e para as finalidades descritas acima.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="deletion-pt">
+      <h2>9. Exclusão dos seus dados</h2>
+      <p><b>No aplicativo (o jeito mais rápido):</b> abra «Configurações → Conta → Excluir conta». Isso exclui imediata e permanentemente todos os dados do aplicativo do seu dispositivo e da pasta do aplicativo no seu Google Drive.</p>
+      <p><b>Sem instalar o aplicativo:</b> envie um e-mail para <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> com o assunto «Exclusão de dados» e informe o e-mail da conta do Google que você usou no aplicativo. Como seus dados não ficam armazenados em nossos servidores, mas no seu dispositivo e (se a sincronização estiver ativada) no seu Google Drive, a exclusão completa geralmente exige apenas revogar o acesso do aplicativo na <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">página de permissões da sua Conta do Google</a>, excluir a pasta de dados do aplicativo no Google Drive e desinstalar o aplicativo do dispositivo – teremos prazer em ajudar e orientar você, se necessário.</p>
+      <p>Respondemos a essas solicitações em até 30 dias.</p>
+    </div>
+
+    <div class="card" id="children-pt">
+      <h2>10. Crianças</h2>
+      <p>O aplicativo não é direcionado a crianças menores de 13 anos e não coleta intencionalmente dados desse público.</p>
+    </div>
+
+    <div class="card" id="changes-pt">
+      <h2>11. Alterações nesta política</h2>
+      <p>Podemos atualizar esta página de tempos em tempos. A data no topo reflete a última alteração. Alterações relevantes também serão indicadas no aplicativo.</p>
+    </div>
+
+    <div class="card" id="contact-pt">
+      <h2>12. Contato</h2>
+      <p>Desenvolvedor: <b>OWO Studio</b>.</p>
+      <p>Para qualquer dúvida sobre privacidade e tratamento de dados, envie um e-mail para <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a>.</p>
+    </div>
+
+  </div>
+
+  <div class="lang-block" id="lang-ro">
+
+    <div class="card toc">
+      <a href="#intro-ro">1. Prezentare generală</a>
+      <a href="#data-ro">2. Ce date prelucrăm</a>
+      <a href="#storage-ro">3. Unde sunt stocate datele</a>
+      <a href="#sharing-ro">4. Partajarea datelor cu terți</a>
+      <a href="#google-ro">5. Utilizarea serviciilor Google</a>
+      <a href="#permissions-ro">6. Permisiunile aplicației</a>
+      <a href="#security-ro">7. Securitate</a>
+      <a href="#retention-ro">8. Păstrarea datelor</a>
+      <a href="#deletion-ro">9. Ștergerea datelor tale</a>
+      <a href="#children-ro">10. Copii</a>
+      <a href="#changes-ro">11. Modificări ale acestei politici</a>
+      <a href="#contact-ro">12. Contact</a>
+    </div>
+
+    <div class="card" id="intro-ro">
+      <h2>1. Prezentare generală</h2>
+      <p>OWO Planner („aplicația”, „noi”) este un planificator de sarcini, obiceiuri, finanțe, jurnal și mementouri. Aplicația este dezvoltată de <b>OWO Studio</b>. Pagina principală a aplicației: <a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>. Această pagină descrie ce date prelucrează aplicația, cum sunt stocate și cum le poți șterge.</p>
+      <p>Prin utilizarea aplicației, ești de acord cu termenii acestei politici.</p>
+    </div>
+
+    <div class="card" id="data-ro">
+      <h2>2. Ce date prelucrăm</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Tipul datelor</th><th>Sursa</th><th>Scopul</th></tr>
+          <tr><td data-label="Tipul datelor">Adresa de e-mail</td><td data-label="Sursa">Autentificare cu Google</td><td data-label="Scopul">Autentificarea contului și sincronizarea între dispozitive</td></tr>
+          <tr><td data-label="Tipul datelor">Sarcini, obiceiuri, notițe, evenimente din calendar</td><td data-label="Sursa">Introduse de tine în aplicație</td><td data-label="Scopul">Funcționalitatea de bază a aplicației</td></tr>
+          <tr><td data-label="Tipul datelor">Înregistrări de venituri/cheltuieli (fila „Finanțe”)</td><td data-label="Sursa">Introduse de tine în aplicație</td><td data-label="Scopul">Evidența finanțelor personale în cadrul aplicației</td></tr>
+          <tr><td data-label="Tipul datelor">Intrări în jurnal (somn, energie, dispoziție, gânduri)</td><td data-label="Sursa">Introduse de tine în aplicație</td><td data-label="Scopul">Jurnal personal de autoobservare</td></tr>
+          <tr><td data-label="Tipul datelor">Fotografii</td><td data-label="Sursa">Camera sau galeria dispozitivului (doar când folosești această funcție)</td><td data-label="Scopul">Atașate sarcinilor/intrărilor; stocate local împreună cu datele aplicației și, dacă sincronizarea este activată, pot fi transmise în spațiul tău Google Drive (appDataFolder)</td></tr>
+        </table>
+      </div>
+      <p>Nu solicităm și nu colectăm locația, contactele, SMS-urile, înregistrările audio sau istoricul de navigare.</p>
+    </div>
+
+    <div class="card" id="storage-ro">
+      <h2>3. Unde sunt stocate datele</h2>
+      <p>Datele sunt stocate <b>local pe dispozitivul tău</b>. Când sincronizarea este activată, o copie este salvată în <b>Google Drive-ul tău</b> (în folderul ascuns de date al aplicației – drive.appdata), accesibil doar acestei aplicații și doar în contul tău.</p>
+      <p>Nu operăm un server propriu care să primească datele tale. Nu putem vedea și nu putem stoca conținutul sarcinilor, finanțelor, jurnalului sau fotografiilor tale – acesta rămâne pe dispozitivul tău și în spațiul tău personal de stocare în cloud.</p>
+    </div>
+
+    <div class="card" id="sharing-ro">
+      <h2>4. Partajarea datelor cu terți</h2>
+      <p>Nu vindem datele tale și nu le partajăm cu terți în scopuri publicitare sau de analiză. Aplicația nu folosește SDK-uri de publicitate sau de analiză care urmăresc utilizatorii.</p>
+      <p>Când folosești Google Sign-In și sincronizarea, datele sunt transmise către serviciile Google – limitate la permisiunile pe care le-ai acordat (email și drive.appdata) – în conformitate cu <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, inclusiv cu cerințele sale de utilizare limitată (Limited Use). Consultă secțiunea 5 de mai jos pentru detalii despre ce se transmite către Google și de ce.</p>
+    </div>
+
+    <div class="card" id="google-ro">
+      <h2>5. Utilizarea serviciilor Google</h2>
+      <p>OWO Planner accesează serviciile Google doar atunci când tu acționezi – atingând „Conectare cu Google”. Această secțiune descrie în detaliu ce date de utilizator Google primește aplicația, de ce, și cum sunt folosite, stocate și protejate.</p>
+
+      <h3>La ce date Google avem acces și de ce</h3>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Date</th><th>Permisiune (scope)</th><th>De ce este necesară</th></tr>
+          <tr><td data-label="Date">Adresa de e-mail</td><td data-label="Permisiune (scope)">email</td><td data-label="De ce este necesară">Pentru a-ți identifica contul la autentificare. Adresa nu este trimisă dezvoltatorului și rămâne pe dispozitivul tău.</td></tr>
+          <tr><td data-label="Date">Informații de bază din profil</td><td data-label="Permisiune (scope)">profile</td><td data-label="De ce este necesară">O permisiune standard Google Sign-In. Aplicația folosește doar adresa ta de e-mail; numele și fotografia ta nu sunt citite, folosite sau stocate.</td></tr>
+          <tr><td data-label="Date">Folderul ascuns de date al aplicației din Google Drive-ul tău (appDataFolder)</td><td data-label="Permisiune (scope)">https://www.googleapis.com/auth/drive.appdata</td><td data-label="De ce este necesară">Pentru a stoca și a restaura un singur fișier de rezervă (owo-planner-data.json) cu datele planificatorului tău: sarcini, obiceiuri, finanțe, jurnal, fotografii. Este folosit pentru sincronizarea între dispozitivele tale. Aplicația nu poate vedea sau modifica niciun alt fișier din Google Drive-ul tău.</td></tr>
+        </table>
+      </div>
+
+      <h3>Cum folosim datele Google</h3>
+      <ul>
+        <li>Datele Google sunt folosite doar pentru a te autentifica și pentru a-ți sincroniza datele între dispozitive – adică doar pentru funcții pe care le vezi în aplicație.</li>
+        <li>Nu vindem aceste date și nu le partajăm cu terți, cu excepția cazurilor în care legea o impune.</li>
+        <li>Nu folosim aceste date pentru publicitate, inclusiv publicitate personalizată sau bazată pe interese.</li>
+        <li>Nu folosim aceste date pentru a dezvolta, îmbunătăți sau antrena modele de inteligență artificială sau de învățare automată.</li>
+        <li>Nu avem server propriu, așa că nici dezvoltatorul, nici altă persoană nu are acces la conținutul datelor tale.</li>
+        <li>Aplicația nu folosește API-urile Google pentru a genera sau procesa imagini și nu citește niciun alt fișier din Google Drive-ul tău.</li>
+      </ul>
+
+      <h3>Cum sunt stocate și protejate datele Google</h3>
+      <ul>
+        <li>Fișierul de rezervă este păstrat în folderul ascuns al aplicației din Google Drive-ul tău personal, accesibil doar acestei aplicații și doar în contul tău.</li>
+        <li>Tokenul de acces Google este păstrat doar în memoria temporară a aplicației și nu este scris pe disc.</li>
+        <li>Toate datele transferate între aplicație și serverele Google sunt trimise printr-o conexiune HTTPS securizată.</li>
+      </ul>
+
+      <h3>Păstrarea și ștergerea datelor Google</h3>
+      <ul>
+        <li>Fișierul de rezervă rămâne în Google Drive-ul tău până îl ștergi.</li>
+        <li>Pentru a-l șterge, deschide în aplicație „Setări → Cont → Șterge contul”. Datele tale sunt eliminate de pe dispozitiv și din folderul aplicației din Google Drive. Vezi secțiunea 9 pentru detalii.</li>
+        <li>Poți revoca oricând accesul aplicației la contul tău Google pe <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">pagina de permisiuni Google</a>.</li>
+      </ul>
+
+      <p>Utilizarea și transferul de către OWO Planner al informațiilor primite de la API-urile Google respectă <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, inclusiv cerințele de utilizare limitată (Limited Use).</p>
+    </div>
+
+    <div class="card" id="permissions-ro">
+      <h2>6. Permisiunile aplicației pe dispozitiv</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Permisiune</th><th>Scopul</th></tr>
+          <tr><td data-label="Permisiune">Cameră</td><td data-label="Scopul">Realizarea de fotografii pentru a fi atașate sarcinilor/intrărilor (solicitată doar când folosești această funcție)</td></tr>
+          <tr><td data-label="Permisiune">Notificări</td><td data-label="Scopul">Afișarea mementourilor pentru sarcini, obiceiuri și evenimente</td></tr>
+          <tr><td data-label="Permisiune">Alarme exacte</td><td data-label="Scopul">Livrarea mementourilor exact la ora programată (opțională; aplicația funcționează și fără ea)</td></tr>
+        </table>
+      </div>
+
+      <h3>Mementouri și alarme exacte</h3>
+      <ul>
+        <li>Aplicația folosește permisiunea pentru notificări și accesul la alarme exacte pentru a afișa mementouri despre sarcini, obiceiuri și evenimente din calendar la ora pe care o setezi tu.</li>
+        <li>Mementourile sunt create și programate local pe dispozitivul tău folosind instrumentele sistemului Android. Serverul dezvoltatorului nu este implicat și nu se trimit date către terți în acest scop.</li>
+        <li>Alarmele exacte sunt folosite doar pentru mementourile pe care le creezi în aplicație. Nu le folosim pentru publicitate, analiză, urmărirea utilizatorilor sau orice alt scop.</li>
+        <li>Ambele permisiuni sunt opționale. Fără acces la alarme exacte, mementourile pot suna mai puțin precis; toate celelalte funcții ale aplicației funcționează ca de obicei.</li>
+        <li>Poți activa sau dezactiva aceste permisiuni oricând din setările de sistem Android pentru aplicație.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="security-ro">
+      <h2>7. Securitate</h2>
+      <ul>
+        <li>Toate datele transferate între aplicație și serverele Google folosesc o conexiune HTTPS securizată.</li>
+        <li>Anumite valori sensibile sunt stocate în spațiul de stocare securizat al dispozitivului (Android Keystore).</li>
+        <li>Copia de rezervă a aplicațiilor la nivel de sistem Android este dezactivată – singura sincronizare se face prin propriul tău Google Drive.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="retention-ro">
+      <h2>8. Păstrarea datelor</h2>
+      <ul>
+        <li>Datele locale sunt stocate pe dispozitivul tău până le ștergi chiar tu (în aplicație sau prin dezinstalarea aplicației).</li>
+        <li>Datele sincronizate sunt stocate în folderul ascuns de date al aplicației (appDataFolder) din Google Drive-ul tău până le ștergi manual sau îți ștergi contul din aplicație.</li>
+        <li>După o solicitare de ștergere, datele sunt eliminate conform procesului descris în secțiunea 9 de mai jos.</li>
+        <li>Nu păstrăm datele mai mult decât este necesar pentru funcționarea aplicației și pentru scopurile descrise mai sus.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="deletion-ro">
+      <h2>9. Ștergerea datelor tale</h2>
+      <p><b>În aplicație (cea mai rapidă metodă):</b> deschide „Setări → Cont → Șterge contul”. Aceasta șterge imediat și definitiv toate datele aplicației de pe dispozitivul tău și din folderul aplicației din Google Drive-ul tău.</p>
+      <p><b>Fără a instala aplicația:</b> scrie la <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> cu subiectul „Ștergerea datelor” și indică adresa de e-mail a contului Google folosit în aplicație. Deoarece datele tale nu sunt stocate pe serverele noastre, ci pe dispozitivul tău și (dacă sincronizarea este activată) în Google Drive-ul tău, ștergerea completă necesită, de obicei, doar revocarea accesului aplicației de pe <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">pagina de permisiuni a contului tău Google</a>, ștergerea folderului de date al aplicației din Google Drive și dezinstalarea aplicației de pe dispozitiv – te ajutăm cu plăcere și te îndrumăm pas cu pas, dacă este nevoie.</p>
+      <p>Răspundem la astfel de solicitări în termen de 30 de zile.</p>
+    </div>
+
+    <div class="card" id="children-ro">
+      <h2>10. Copii</h2>
+      <p>Aplicația nu se adresează copiilor sub 13 ani și nu colectează cu bună știință date de la acest public.</p>
+    </div>
+
+    <div class="card" id="changes-ro">
+      <h2>11. Modificări ale acestei politici</h2>
+      <p>Putem actualiza această pagină din când în când. Data de sus reflectă ultima modificare. Modificările importante vor fi menționate și în aplicație.</p>
+    </div>
+
+    <div class="card" id="contact-ro">
+      <h2>12. Contact</h2>
+      <p>Dezvoltator: <b>OWO Studio</b>.</p>
+      <p>Pentru orice întrebări despre confidențialitate și prelucrarea datelor, scrie la <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a>.</p>
+    </div>
+
+  </div>
+
+  <div class="lang-block" id="lang-es">
+
+    <div class="card toc">
+      <a href="#intro-es">1. Información general</a>
+      <a href="#data-es">2. Qué datos tratamos</a>
+      <a href="#storage-es">3. Dónde se almacenan los datos</a>
+      <a href="#sharing-es">4. Cesión de datos a terceros</a>
+      <a href="#google-es">5. Uso de los servicios de Google</a>
+      <a href="#permissions-es">6. Permisos de la aplicación</a>
+      <a href="#security-es">7. Seguridad</a>
+      <a href="#retention-es">8. Conservación de los datos</a>
+      <a href="#deletion-es">9. Eliminación de tus datos</a>
+      <a href="#children-es">10. Menores</a>
+      <a href="#changes-es">11. Cambios en esta política</a>
+      <a href="#contact-es">12. Contacto</a>
+    </div>
+
+    <div class="card" id="intro-es">
+      <h2>1. Información general</h2>
+      <p>OWO Planner («la aplicación», «nosotros») es un planificador de tareas, hábitos, finanzas, diario y recordatorios. La aplicación está desarrollada por <b>OWO Studio</b>. Página principal de la aplicación: <a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>. Esta página describe qué datos trata la aplicación, cómo se almacenan y cómo puedes eliminarlos.</p>
+      <p>Al usar la aplicación, aceptas los términos de esta política.</p>
+    </div>
+
+    <div class="card" id="data-es">
+      <h2>2. Qué datos tratamos</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Tipo de datos</th><th>Origen</th><th>Finalidad</th></tr>
+          <tr><td data-label="Tipo de datos">Dirección de correo electrónico</td><td data-label="Origen">Inicio de sesión con Google</td><td data-label="Finalidad">Autenticación de la cuenta y sincronización entre dispositivos</td></tr>
+          <tr><td data-label="Tipo de datos">Tareas, hábitos, notas, eventos del calendario</td><td data-label="Origen">Introducidos por ti en la aplicación</td><td data-label="Finalidad">Funcionalidad principal de la aplicación</td></tr>
+          <tr><td data-label="Tipo de datos">Registros de ingresos/gastos (pestaña «Finanzas»)</td><td data-label="Origen">Introducidos por ti en la aplicación</td><td data-label="Finalidad">Control de finanzas personales dentro de la aplicación</td></tr>
+          <tr><td data-label="Tipo de datos">Entradas del diario (sueño, energía, estado de ánimo, pensamientos)</td><td data-label="Origen">Introducidos por ti en la aplicación</td><td data-label="Finalidad">Diario personal de autoobservación</td></tr>
+          <tr><td data-label="Tipo de datos">Fotos</td><td data-label="Origen">Cámara o galería del dispositivo (solo cuando usas esta función)</td><td data-label="Finalidad">Se adjuntan a tareas/entradas; se almacenan localmente junto con los datos de la aplicación y, si la sincronización está activada, pueden transmitirse a tu almacenamiento de Google Drive (appDataFolder)</td></tr>
+        </table>
+      </div>
+      <p>No solicitamos ni recopilamos ubicación, contactos, SMS, grabaciones de audio ni historial de navegación.</p>
+    </div>
+
+    <div class="card" id="storage-es">
+      <h2>3. Dónde se almacenan los datos</h2>
+      <p>Los datos se almacenan <b>localmente en tu dispositivo</b>. Cuando la sincronización está activada, se guarda una copia en <b>tu Google Drive</b> (en la carpeta de datos oculta de la aplicación – drive.appdata), accesible únicamente para esta aplicación y solo dentro de tu cuenta.</p>
+      <p>No operamos un servidor propio que reciba tus datos. No podemos ver ni almacenar el contenido de tus tareas, finanzas, diario o fotos: permanece en tu dispositivo y en tu almacenamiento personal en la nube.</p>
+    </div>
+
+    <div class="card" id="sharing-es">
+      <h2>4. Cesión de datos a terceros</h2>
+      <p>No vendemos tus datos ni los compartimos con terceros con fines publicitarios o analíticos. La aplicación no utiliza SDK de publicidad o analítica que rastreen a los usuarios.</p>
+      <p>Cuando usas Google Sign-In y la sincronización, los datos se transmiten a los servicios de Google –limitados a los permisos que concedes (email y drive.appdata)– de conformidad con la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, incluidos sus requisitos de uso limitado (Limited Use). Consulta la sección 5 más abajo para conocer el detalle de lo que se transmite a Google y por qué.</p>
+    </div>
+
+    <div class="card" id="google-es">
+      <h2>5. Uso de los servicios de Google</h2>
+      <p>OWO Planner accede a los servicios de Google solo cuando tú actúas, al pulsar «Iniciar sesión con Google». Esta sección describe en detalle qué datos de usuario de Google recibe la aplicación, por qué, y cómo se utilizan, almacenan y protegen.</p>
+
+      <h3>A qué datos de Google accedemos y por qué</h3>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Datos</th><th>Permiso (scope)</th><th>Por qué es necesario</th></tr>
+          <tr><td data-label="Datos">Dirección de correo electrónico</td><td data-label="Permiso (scope)">email</td><td data-label="Por qué es necesario">Para identificar tu cuenta al iniciar sesión. La dirección no se envía al desarrollador y permanece en tu dispositivo.</td></tr>
+          <tr><td data-label="Datos">Información básica del perfil</td><td data-label="Permiso (scope)">profile</td><td data-label="Por qué es necesario">Un permiso estándar de Google Sign-In. La aplicación solo utiliza tu dirección de correo electrónico; tu nombre y tu foto no se leen, utilizan ni almacenan.</td></tr>
+          <tr><td data-label="Datos">La carpeta de datos oculta de la aplicación en tu Google Drive (appDataFolder)</td><td data-label="Permiso (scope)">https://www.googleapis.com/auth/drive.appdata</td><td data-label="Por qué es necesario">Para guardar y restaurar un único archivo de copia de seguridad (owo-planner-data.json) con los datos de tu planificador: tareas, hábitos, finanzas, diario, fotos. Se usa para sincronizar entre tus dispositivos. La aplicación no puede ver ni modificar ningún otro archivo de tu Google Drive.</td></tr>
+        </table>
+      </div>
+
+      <h3>Cómo usamos los datos de Google</h3>
+      <ul>
+        <li>Los datos de Google se usan únicamente para iniciar tu sesión y sincronizar tus datos entre tus dispositivos, es decir, solo para funciones que puedes ver en la aplicación.</li>
+        <li>No vendemos estos datos ni los compartimos con terceros, salvo cuando la ley lo exija.</li>
+        <li>No usamos estos datos para publicidad, incluida la publicidad personalizada o basada en intereses.</li>
+        <li>No usamos estos datos para desarrollar, mejorar ni entrenar modelos de inteligencia artificial o aprendizaje automático.</li>
+        <li>No tenemos un servidor propio, por lo que ni el desarrollador ni ninguna otra persona tiene acceso al contenido de tus datos.</li>
+        <li>La aplicación no usa las API de Google para generar ni procesar imágenes y no lee ningún otro archivo de tu Google Drive.</li>
+      </ul>
+
+      <h3>Cómo se almacenan y protegen los datos de Google</h3>
+      <ul>
+        <li>El archivo de copia de seguridad se conserva en la carpeta oculta de la aplicación en tu Google Drive personal, accesible solo para esta aplicación y solo dentro de tu cuenta.</li>
+        <li>El token de acceso de Google se mantiene únicamente en la memoria temporal de la aplicación y no se escribe en el disco.</li>
+        <li>Todos los datos transferidos entre la aplicación y los servidores de Google se envían mediante una conexión HTTPS segura.</li>
+      </ul>
+
+      <h3>Conservación y eliminación de los datos de Google</h3>
+      <ul>
+        <li>El archivo de copia de seguridad permanece en tu Google Drive hasta que lo elimines.</li>
+        <li>Para eliminarlo, abre «Ajustes → Cuenta → Eliminar cuenta» en la aplicación. Tus datos se eliminan del dispositivo y de la carpeta de la aplicación en Google Drive. Consulta la sección 9 para más detalles.</li>
+        <li>Puedes revocar el acceso de la aplicación a tu cuenta de Google en cualquier momento en la <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">página de permisos de Google</a>.</li>
+      </ul>
+
+      <p>El uso y la transferencia por parte de OWO Planner de la información recibida de las API de Google cumplen la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, incluidos los requisitos de uso limitado (Limited Use).</p>
+    </div>
+
+    <div class="card" id="permissions-es">
+      <h2>6. Permisos de la aplicación en el dispositivo</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Permiso</th><th>Finalidad</th></tr>
+          <tr><td data-label="Permiso">Cámara</td><td data-label="Finalidad">Hacer fotos para adjuntarlas a tareas/entradas (se solicita solo cuando usas esta función)</td></tr>
+          <tr><td data-label="Permiso">Notificaciones</td><td data-label="Finalidad">Mostrar recordatorios de tareas, hábitos y eventos</td></tr>
+          <tr><td data-label="Permiso">Alarmas exactas</td><td data-label="Finalidad">Entregar los recordatorios a la hora exacta programada (opcional; la aplicación sigue funcionando sin él)</td></tr>
+        </table>
+      </div>
+
+      <h3>Recordatorios y alarmas exactas</h3>
+      <ul>
+        <li>La aplicación usa el permiso de notificaciones y el acceso a alarmas exactas para mostrar recordatorios de tareas, hábitos y eventos del calendario a la hora que tú mismo estableces.</li>
+        <li>Los recordatorios se crean y programan localmente en tu dispositivo mediante las herramientas del sistema Android. El servidor del desarrollador no interviene y no se envían datos a terceros con este fin.</li>
+        <li>Las alarmas exactas se usan solo para los recordatorios que creas en la aplicación. No las usamos para publicidad, analítica, seguimiento de usuarios ni ningún otro fin.</li>
+        <li>Ambos permisos son opcionales. Sin acceso a alarmas exactas, los recordatorios pueden activarse con menos precisión; el resto de las funciones de la aplicación funcionan con normalidad.</li>
+        <li>Puedes activar o desactivar estos permisos en cualquier momento en los ajustes del sistema Android de la aplicación.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="security-es">
+      <h2>7. Seguridad</h2>
+      <ul>
+        <li>Todos los datos transferidos entre la aplicación y los servidores de Google utilizan una conexión HTTPS segura.</li>
+        <li>Ciertos valores sensibles se almacenan en el almacenamiento seguro del dispositivo (Android Keystore).</li>
+        <li>La copia de seguridad de aplicaciones a nivel de sistema de Android está desactivada: la única sincronización se realiza a través de tu propio Google Drive.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="retention-es">
+      <h2>8. Conservación de los datos</h2>
+      <ul>
+        <li>Los datos locales se conservan en tu dispositivo hasta que los elimines tú mismo (dentro de la aplicación o desinstalándola).</li>
+        <li>Los datos sincronizados se conservan en la carpeta de datos oculta de la aplicación (appDataFolder) en tu Google Drive hasta que los elimines manualmente o elimines tu cuenta en la aplicación.</li>
+        <li>Tras una solicitud de eliminación, los datos se eliminan siguiendo el proceso descrito en la sección 9 más abajo.</li>
+        <li>No conservamos los datos más tiempo del necesario para el funcionamiento de la aplicación y los fines descritos anteriormente.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="deletion-es">
+      <h2>9. Eliminación de tus datos</h2>
+      <p><b>En la aplicación (la forma más rápida):</b> abre «Ajustes → Cuenta → Eliminar cuenta». Esto elimina de inmediato y de forma permanente todos los datos de la aplicación de tu dispositivo y de la carpeta de la aplicación en tu Google Drive.</p>
+      <p><b>Sin instalar la aplicación:</b> escribe a <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> con el asunto «Eliminación de datos» e indica el correo de la cuenta de Google que usaste en la aplicación. Dado que tus datos no se almacenan en nuestros servidores sino en tu dispositivo y (si la sincronización está activada) en tu Google Drive, la eliminación completa normalmente solo requiere revocar el acceso de la aplicación en la <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">página de permisos de tu cuenta de Google</a>, eliminar la carpeta de datos de la aplicación en Google Drive y desinstalar la aplicación de tu dispositivo; estaremos encantados de ayudarte y guiarte si lo necesitas.</p>
+      <p>Respondemos a estas solicitudes en un plazo de 30 días.</p>
+    </div>
+
+    <div class="card" id="children-es">
+      <h2>10. Menores</h2>
+      <p>La aplicación no está dirigida a menores de 13 años y no recopila conscientemente datos de este público.</p>
+    </div>
+
+    <div class="card" id="changes-es">
+      <h2>11. Cambios en esta política</h2>
+      <p>Podemos actualizar esta página de vez en cuando. La fecha que aparece arriba refleja el último cambio. Los cambios importantes también se indicarán dentro de la aplicación.</p>
+    </div>
+
+    <div class="card" id="contact-es">
+      <h2>12. Contacto</h2>
+      <p>Desarrollador: <b>OWO Studio</b>.</p>
+      <p>Si tienes preguntas sobre privacidad y tratamiento de datos, escribe a <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a>.</p>
+    </div>
+
+  </div>
+
+  <div class="lang-block" id="lang-tr">
+
+    <div class="card toc">
+      <a href="#intro-tr">1. Genel bakış</a>
+      <a href="#data-tr">2. Hangi verileri işliyoruz</a>
+      <a href="#storage-tr">3. Veriler nerede saklanır</a>
+      <a href="#sharing-tr">4. Verilerin üçüncü taraflarla paylaşımı</a>
+      <a href="#google-tr">5. Google hizmetlerinin kullanımı</a>
+      <a href="#permissions-tr">6. Uygulama izinleri</a>
+      <a href="#security-tr">7. Güvenlik</a>
+      <a href="#retention-tr">8. Verilerin saklanması</a>
+      <a href="#deletion-tr">9. Verilerinizin silinmesi</a>
+      <a href="#children-tr">10. Çocuklar</a>
+      <a href="#changes-tr">11. Bu politikadaki değişiklikler</a>
+      <a href="#contact-tr">12. İletişim</a>
+    </div>
+
+    <div class="card" id="intro-tr">
+      <h2>1. Genel bakış</h2>
+      <p>OWO Planner (“uygulama”, “biz”), görevler, alışkanlıklar, finans, günlük ve hatırlatıcılar için bir planlayıcıdır. Uygulama <b>OWO Studio</b> tarafından geliştirilmiştir. Uygulamanın ana sayfası: <a href="https://owo-studio-games.github.io/">https://owo-studio-games.github.io/</a>. Bu sayfa, uygulamanın hangi verileri işlediğini, bunların nasıl saklandığını ve nasıl silebileceğinizi açıklar.</p>
+      <p>Uygulamayı kullanarak bu politikanın şartlarını kabul etmiş olursunuz.</p>
+    </div>
+
+    <div class="card" id="data-tr">
+      <h2>2. Hangi verileri işliyoruz</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Veri türü</th><th>Kaynak</th><th>Amaç</th></tr>
+          <tr><td data-label="Veri türü">E-posta adresi</td><td data-label="Kaynak">Google ile oturum açma</td><td data-label="Amaç">Hesap doğrulama ve cihazlar arası senkronizasyon</td></tr>
+          <tr><td data-label="Veri türü">Görevler, alışkanlıklar, notlar, takvim etkinlikleri</td><td data-label="Kaynak">Uygulamada sizin tarafınızdan girilir</td><td data-label="Amaç">Uygulamanın temel işlevleri</td></tr>
+          <tr><td data-label="Veri türü">Gelir/gider kayıtları (“Finans” sekmesi)</td><td data-label="Kaynak">Uygulamada sizin tarafınızdan girilir</td><td data-label="Amaç">Uygulama içinde kişisel finans takibi</td></tr>
+          <tr><td data-label="Veri türü">Günlük kayıtları (uyku, enerji, ruh hali, düşünceler)</td><td data-label="Kaynak">Uygulamada sizin tarafınızdan girilir</td><td data-label="Amaç">Kişisel öz-gözlem günlüğü</td></tr>
+          <tr><td data-label="Veri türü">Fotoğraflar</td><td data-label="Kaynak">Cihaz kamerası veya galerisi (yalnızca bu özelliği kullandığınızda)</td><td data-label="Amaç">Görevlere/kayıtlara eklenir; uygulama verileriyle birlikte yerel olarak saklanır ve senkronizasyon etkinse Google Drive depolama alanınıza (appDataFolder) aktarılabilir</td></tr>
+        </table>
+      </div>
+      <p>Konum, kişiler, SMS, ses kayıtları veya tarama geçmişi talep etmez ve toplamayız.</p>
+    </div>
+
+    <div class="card" id="storage-tr">
+      <h2>3. Veriler nerede saklanır</h2>
+      <p>Veriler <b>cihazınızda yerel olarak</b> saklanır. Senkronizasyon etkin olduğunda, bir kopya <b>Google Drive’ınıza</b> (uygulamanın gizli veri klasörüne – drive.appdata) kaydedilir; bu klasöre yalnızca bu uygulama ve yalnızca sizin hesabınız içinde erişilebilir.</p>
+      <p>Verilerinizi alan kendi sunucumuzu işletmiyoruz. Görevlerinizin, finansınızın, günlüğünüzün veya fotoğraflarınızın içeriğini göremeyiz ve saklayamayız – bunlar cihazınızda ve kişisel bulut depolama alanınızda kalır.</p>
+    </div>
+
+    <div class="card" id="sharing-tr">
+      <h2>4. Verilerin üçüncü taraflarla paylaşımı</h2>
+      <p>Verilerinizi satmıyoruz ve reklam veya analiz amacıyla üçüncü taraflarla paylaşmıyoruz. Uygulama, kullanıcıları izleyen reklam veya analiz SDK’ları kullanmaz.</p>
+      <p>Google Sign-In ve senkronizasyonu kullandığınızda, veriler Google hizmetlerine aktarılır – verdiğiniz izinlerle (email ve drive.appdata) sınırlı olarak – <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a> uyarınca ve Sınırlı Kullanım (Limited Use) şartları dahil. Google’a nelerin ve neden aktarıldığına dair ayrıntılar için aşağıdaki 5. bölüme bakın.</p>
+    </div>
+
+    <div class="card" id="google-tr">
+      <h2>5. Google hizmetlerinin kullanımı</h2>
+      <p>OWO Planner, Google hizmetlerine yalnızca siz bir işlem yaptığınızda – “Google ile oturum aç”a dokunduğunuzda – erişir. Bu bölüm, uygulamanın hangi Google kullanıcı verilerini aldığını, nedenini ve bunların nasıl kullanıldığını, saklandığını ve korunduğunu ayrıntılı olarak açıklar.</p>
+
+      <h3>Hangi Google verilerine neden erişiyoruz</h3>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>Veri</th><th>İzin (scope)</th><th>Neden gerekli</th></tr>
+          <tr><td data-label="Veri">E-posta adresi</td><td data-label="İzin (scope)">email</td><td data-label="Neden gerekli">Oturum açtığınızda hesabınızı tanımlamak için. Adres geliştiriciye gönderilmez ve cihazınızda kalır.</td></tr>
+          <tr><td data-label="Veri">Temel profil bilgileri</td><td data-label="İzin (scope)">profile</td><td data-label="Neden gerekli">Standart bir Google Sign-In izni. Uygulama yalnızca e-posta adresinizi kullanır; adınız ve fotoğrafınız okunmaz, kullanılmaz veya saklanmaz.</td></tr>
+          <tr><td data-label="Veri">Google Drive’ınızdaki uygulamanın gizli veri klasörü (appDataFolder)</td><td data-label="İzin (scope)">https://www.googleapis.com/auth/drive.appdata</td><td data-label="Neden gerekli">Planlayıcı verilerinizi (görevler, alışkanlıklar, finans, günlük, fotoğraflar) içeren tek bir yedek dosyayı (owo-planner-data.json) saklamak ve geri yüklemek için. Cihazlarınız arasında senkronizasyon için kullanılır. Uygulama, Google Drive’ınızdaki başka hiçbir dosyayı göremez veya değiştiremez.</td></tr>
+        </table>
+      </div>
+
+      <h3>Google verilerini nasıl kullanıyoruz</h3>
+      <ul>
+        <li>Google verileri yalnızca oturum açmanız ve verilerinizi cihazlarınız arasında senkronize etmeniz için kullanılır – yani yalnızca uygulamada gördüğünüz özellikler için.</li>
+        <li>Bu verileri satmıyoruz ve yasaların gerektirdiği durumlar dışında üçüncü taraflarla paylaşmıyoruz.</li>
+        <li>Bu verileri, kişiselleştirilmiş veya ilgi alanına dayalı reklamlar dahil, reklam amacıyla kullanmıyoruz.</li>
+        <li>Bu verileri yapay zekâ veya makine öğrenimi modellerini geliştirmek, iyileştirmek veya eğitmek için kullanmıyoruz.</li>
+        <li>Kendi sunucumuz olmadığından, ne geliştiricinin ne de başka bir kişinin verilerinizin içeriğine erişimi vardır.</li>
+        <li>Uygulama, görüntü oluşturmak veya işlemek için Google API’lerini kullanmaz ve Google Drive’ınızdaki başka hiçbir dosyayı okumaz.</li>
+      </ul>
+
+      <h3>Google verileri nasıl saklanır ve korunur</h3>
+      <ul>
+        <li>Yedek dosya, kişisel Google Drive’ınızdaki uygulamanın gizli klasöründe tutulur; buna yalnızca bu uygulama ve yalnızca sizin hesabınızda erişilebilir.</li>
+        <li>Google erişim belirteci yalnızca uygulamanın geçici belleğinde tutulur ve diske yazılmaz.</li>
+        <li>Uygulama ile Google sunucuları arasında aktarılan tüm veriler güvenli bir HTTPS bağlantısı üzerinden gönderilir.</li>
+      </ul>
+
+      <h3>Google verilerinin saklanması ve silinmesi</h3>
+      <ul>
+        <li>Yedek dosya, siz silene kadar Google Drive’ınızda kalır.</li>
+        <li>Silmek için uygulamada “Ayarlar → Hesap → Hesabı sil” yolunu açın. Verileriniz cihazdan ve Google Drive’daki uygulama klasöründen kaldırılır. Ayrıntılar için 9. bölüme bakın.</li>
+        <li>Uygulamanın Google Hesabınıza erişimini istediğiniz zaman <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google izinleri sayfasından</a> iptal edebilirsiniz.</li>
+      </ul>
+
+      <p>OWO Planner’ın Google API’lerinden alınan bilgileri kullanımı ve aktarımı, Sınırlı Kullanım (Limited Use) şartları dahil <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>’ye uygundur.</p>
+    </div>
+
+    <div class="card" id="permissions-tr">
+      <h2>6. Cihaz üzerindeki uygulama izinleri</h2>
+      <div class="tableScroll">
+        <table>
+          <tr class="hd"><th>İzin</th><th>Amaç</th></tr>
+          <tr><td data-label="İzin">Kamera</td><td data-label="Amaç">Görevlere/kayıtlara eklenecek fotoğraflar çekmek (yalnızca bu özelliği kullandığınızda istenir)</td></tr>
+          <tr><td data-label="İzin">Bildirimler</td><td data-label="Amaç">Görevler, alışkanlıklar ve etkinlikler için hatırlatıcıları göstermek</td></tr>
+          <tr><td data-label="İzin">Tam zamanlı alarmlar</td><td data-label="Amaç">Hatırlatıcıları planlanan tam zamanda iletmek (isteğe bağlı; uygulama bu izin olmadan da çalışmaya devam eder)</td></tr>
+        </table>
+      </div>
+
+      <h3>Hatırlatıcılar ve tam zamanlı alarmlar</h3>
+      <ul>
+        <li>Uygulama, görevler, alışkanlıklar ve takvim etkinlikleri hakkındaki hatırlatıcıları sizin belirlediğiniz zamanda göstermek için bildirim iznini ve tam zamanlı alarmlara erişimi kullanır.</li>
+        <li>Hatırlatıcılar, Android sistem araçları kullanılarak cihazınızda yerel olarak oluşturulur ve zamanlanır. Geliştiricinin sunucusu işe karışmaz ve bu amaçla üçüncü taraflara hiçbir veri gönderilmez.</li>
+        <li>Tam zamanlı alarmlar yalnızca uygulamada oluşturduğunuz hatırlatıcılar için kullanılır. Bunları reklam, analiz, kullanıcı takibi veya başka herhangi bir amaçla kullanmayız.</li>
+        <li>Her iki izin de isteğe bağlıdır. Tam zamanlı alarmlara erişim olmadan hatırlatıcılar daha az hassas çalabilir; uygulamanın diğer tüm özellikleri her zamanki gibi çalışır.</li>
+        <li>Bu izinleri istediğiniz zaman uygulamanın Android sistem ayarlarından açıp kapatabilirsiniz.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="security-tr">
+      <h2>7. Güvenlik</h2>
+      <ul>
+        <li>Uygulama ile Google sunucuları arasında aktarılan tüm veriler güvenli bir HTTPS bağlantısı kullanır.</li>
+        <li>Seçili hassas değerler cihazın güvenli depolama alanında (Android Keystore) saklanır.</li>
+        <li>Android’in sistem düzeyindeki uygulama yedeklemesi devre dışıdır – tek senkronizasyon kendi Google Drive’ınız üzerinden gerçekleşir.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="retention-tr">
+      <h2>8. Verilerin saklanması</h2>
+      <ul>
+        <li>Yerel veriler, siz kendiniz silene kadar (uygulama içinden veya uygulamayı kaldırarak) cihazınızda saklanır.</li>
+        <li>Senkronize edilen veriler, siz elle silene veya uygulamada hesabınızı silene kadar Google Drive’ınızdaki uygulamanın gizli veri klasöründe (appDataFolder) saklanır.</li>
+        <li>Silme talebinden sonra veriler, aşağıdaki 9. bölümde açıklanan süreçle kaldırılır.</li>
+        <li>Verileri, uygulamanın işleyişi ve yukarıda açıklanan amaçlar için gerekenden daha uzun süre saklamayız.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="deletion-tr">
+      <h2>9. Verilerinizin silinmesi</h2>
+      <p><b>Uygulamada (en hızlı yol):</b> “Ayarlar → Hesap → Hesabı sil” yolunu açın. Bu işlem, tüm uygulama verilerini cihazınızdan ve Google Drive’ınızdaki uygulama klasöründen hemen ve kalıcı olarak siler.</p>
+      <p><b>Uygulamayı yüklemeden:</b> <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> adresine “Veri silme” konusuyla e-posta gönderin ve uygulamada kullandığınız Google hesabının e-posta adresini belirtin. Verileriniz sunucularımızda değil, cihazınızda ve (senkronizasyon etkinse) Google Drive’ınızda saklandığından, tam silme genellikle yalnızca uygulamanın erişimini <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Hesabı izinleri sayfanızdan</a> iptal etmeyi, Google Drive’daki uygulama veri klasörünü silmeyi ve uygulamayı cihazınızdan kaldırmayı gerektirir – gerekirse size memnuniyetle yardım eder ve adım adım yol gösteririz.</p>
+      <p>Bu tür taleplere 30 gün içinde yanıt veriyoruz.</p>
+    </div>
+
+    <div class="card" id="children-tr">
+      <h2>10. Çocuklar</h2>
+      <p>Uygulama 13 yaşın altındaki çocuklara yönelik değildir ve bu kitleden bilerek veri toplamaz.</p>
+    </div>
+
+    <div class="card" id="changes-tr">
+      <h2>11. Bu politikadaki değişiklikler</h2>
+      <p>Bu sayfayı zaman zaman güncelleyebiliriz. Üstteki tarih, son değişikliği gösterir. Önemli değişiklikler ayrıca uygulama içinde belirtilecektir.</p>
+    </div>
+
+    <div class="card" id="contact-tr">
+      <h2>12. İletişim</h2>
+      <p>Geliştirici: <b>OWO Studio</b>.</p>
+      <p>Gizlilik ve veri işleme hakkındaki her türlü soru için <a class="mail" href="mailto:supportowoplanner@gmail.com">supportowoplanner@gmail.com</a> adresine e-posta gönderin.</p>
+    </div>
+
+  </div>
+
 </div>
+</main>
+
+<div class="foot" id="foot">© 2026 OWO Studio</div>
+<script>(function(){var y=new Date().getFullYear(),e=document.getElementById("foot");if(e&&y>2026)e.textContent="© 2026–"+y+" OWO Studio";})();</script>
 
 <script>
   (function(){
-    var STR = {
-      ru: { title: 'Политика конфиденциальности OWO Planner', updated: 'Действует с 8 октября 2026 г.', btn: 'English (US)' },
-      en: { title: 'OWO Planner Privacy Policy', updated: 'Effective October 8, 2026', btn: 'Русский' }
-    };
-    var btn = document.getElementById('langToggle');
-    var blocks = { ru: document.getElementById('lang-ru'), en: document.getElementById('lang-en') };
+    var LANGS = [["ar", "العربية", "🇸🇦"], ["zh", "中文", "🇨🇳"], ["en", "English", "🇬🇧"], ["en-US", "English (US)", "🇺🇸"], ["fr", "Français", "🇫🇷"], ["de", "Deutsch", "🇩🇪"], ["it", "Italiano", "🇮🇹"], ["ja", "日本語", "🇯🇵"], ["pl", "Polski", "🇵🇱"], ["pt", "Português", "🇵🇹"], ["ro", "Română", "🇷🇴"], ["ru", "Русский", "🇷🇺"], ["es", "Español", "🇪🇸"], ["tr", "Türkçe", "🇹🇷"]];
+    var STR = {"ru": {"t": "Политика конфиденциальности OWO Planner", "u": "Действует с 8 октября 2026 г.", "d": "Политика конфиденциальности – OWO Planner"}, "en-US": {"t": "OWO Planner Privacy Policy", "u": "Effective October 8, 2026", "d": "Privacy Policy – OWO Planner"}, "en": {"t": "OWO Planner Privacy Policy", "u": "Effective 8 October 2026", "d": "Privacy Policy – OWO Planner"}, "ar": {"t": "سياسة الخصوصية لتطبيق OWO Planner", "u": "سارية اعتبارًا من 8 أكتوبر 2026", "d": "سياسة الخصوصية – OWO Planner"}, "zh": {"t": "OWO Planner 隐私政策", "u": "自 2026 年 10 月 8 日起生效", "d": "隐私政策 – OWO Planner"}, "fr": {"t": "Politique de confidentialité d'OWO Planner", "u": "En vigueur depuis le 8 octobre 2026", "d": "Politique de confidentialité – OWO Planner"}, "de": {"t": "Datenschutzerklärung von OWO Planner", "u": "Gültig ab 8. Oktober 2026", "d": "Datenschutzerklärung – OWO Planner"}, "it": {"t": "Informativa sulla privacy di OWO Planner", "u": "In vigore dall'8 ottobre 2026", "d": "Informativa sulla privacy – OWO Planner"}, "ja": {"t": "OWO Plannerのプライバシーポリシー", "u": "2026年10月8日より有効", "d": "プライバシーポリシー – OWO Planner"}, "pl": {"t": "Polityka prywatności OWO Planner", "u": "Obowiązuje od 8 października 2026 r.", "d": "Polityka prywatności – OWO Planner"}, "pt": {"t": "Política de Privacidade do OWO Planner", "u": "Em vigor desde 8 de outubro de 2026", "d": "Política de Privacidade – OWO Planner"}, "ro": {"t": "Politica de confidențialitate OWO Planner", "u": "În vigoare din 8 octombrie 2026", "d": "Politica de confidențialitate – OWO Planner"}, "es": {"t": "Política de privacidad de OWO Planner", "u": "En vigor desde el 8 de octubre de 2026", "d": "Política de privacidad – OWO Planner"}, "tr": {"t": "OWO Planner Gizlilik Politikası", "u": "8 Ekim 2026 tarihinden itibaren geçerlidir", "d": "Gizlilik Politikası – OWO Planner"}};
+    var BLK = {"en": "gb"};
+    var RTL = {ar:1};
+    var root = document.documentElement;
+    var btn = document.getElementById('langBtn'), cur = document.getElementById('langCur'), menu = document.getElementById('langMenu');
+    var codes = LANGS.map(function(l){return l[0];});
+    function find(c){ for (var i=0;i<LANGS.length;i++) if (LANGS[i][0]===c) return LANGS[i]; return LANGS[3]; }
+    function pick(tag){
+      if (!tag) return null; tag = String(tag).replace('_','-');
+      for (var i=0;i<codes.length;i++) if (codes[i].toLowerCase()===tag.toLowerCase()) return codes[i];
+      var base = tag.split('-')[0].toLowerCase();
+      for (var j=0;j<codes.length;j++) if (codes[j].toLowerCase()===base) return codes[j];
+      return null;
+    }
     function apply(lang){
-      blocks.ru.classList.toggle('active', lang === 'ru');
-      blocks.en.classList.toggle('active', lang === 'en');
-      document.documentElement.lang = lang === 'en' ? 'en-US' : 'ru';
-      document.getElementById('pageTitle').textContent = STR[lang].title;
-      document.getElementById('pageUpdated').textContent = STR[lang].updated;
-      btn.textContent = STR[lang].btn;
-      btn.setAttribute('data-lang', lang);
-      try{ localStorage.setItem('owoPrivacyLang', lang); }catch(e){}
+      var s = STR[lang] || STR['en-US'];
+      document.querySelectorAll('.lang-block').forEach(function(b){ b.classList.toggle('active', b.id === 'lang-' + (BLK[lang] || lang)); });
+      root.lang = lang; root.dir = RTL[lang] ? 'rtl' : 'ltr';
+      document.getElementById('pageTitle').textContent = s.t;
+      document.getElementById('pageUpdated').textContent = s.u;
+      document.title = s.d;
+      var li = find(lang); cur.textContent = li[2] + ' ' + li[1];
+      menu.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-selected', b.getAttribute('data-code')===lang ? 'true':'false'); });
     }
-    btn.addEventListener('click', function(){
-      apply(btn.getAttribute('data-lang') === 'ru' ? 'en' : 'ru');
+    function setLang(lang, save){
+      apply(lang);
+      if (save) { try{ localStorage.setItem('owoPrivacyLang2', lang); }catch(e){} }
+    }
+    function closeMenu(){ menu.hidden = true; btn.setAttribute('aria-expanded','false'); }
+    LANGS.forEach(function(l){
+      var li = document.createElement('li'), b = document.createElement('button');
+      b.type='button'; b.setAttribute('role','option'); b.setAttribute('data-code', l[0]);
+      b.textContent = l[2]+' '+l[1];
+      b.addEventListener('click', function(){ setLang(l[0], true); closeMenu(); btn.focus(); });
+      li.appendChild(b); menu.appendChild(li);
     });
-    var saved = null;
-    try{ saved = localStorage.getItem('owoPrivacyLang'); }catch(e){}
-    if(!saved){
-      saved = 'en';
-    }
-    apply(saved === 'ru' ? 'ru' : 'en');
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = menu.hidden; menu.hidden = !open; btn.setAttribute('aria-expanded', open?'true':'false');
+      if (open){ var sel = menu.querySelector('[aria-selected="true"]'); if (sel) sel.scrollIntoView({block:'nearest'}); }
+    });
+    document.addEventListener('click', function(e){ if (!menu.hidden && !menu.contains(e.target)) closeMenu(); });
+    document.addEventListener('keydown', function(e){ if (e.key==='Escape' && !menu.hidden){ closeMenu(); btn.focus(); } });
+    var start = null;
+    try{ start = pick(new URLSearchParams(location.search).get('lang')); }catch(e){}
+    if (!start){ try{ start = pick(localStorage.getItem('owoPrivacyLang2')); }catch(e){} }
+    if (!start){ var nl = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language]; for (var i=0;i<nl.length && !start;i++) start = pick(nl[i]); }
+    setLang(start || 'en-US', false);
   })();
 </script>
 
