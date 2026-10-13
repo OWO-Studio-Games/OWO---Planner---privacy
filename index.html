@@ -2349,7 +2349,6 @@
     var start = null;
     try{ start = pick(new URLSearchParams(location.search).get('lang')); }catch(e){}
     if (!start){ try{ start = pick(localStorage.getItem('owoPrivacyLang2')); }catch(e){} }
-    if (!start){ var nl = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language]; for (var i=0;i<nl.length && !start;i++) start = pick(nl[i]); }
     setLang(start || 'en-US', false);
   })();
 </script>
